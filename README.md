@@ -1,6 +1,6 @@
-# IdentityIsolation
-Isolamento do ASP.NET Identity e utilização no Domínio
+# ControleFinanceiro
+Sistema para controle de gastos pessoais
 
 ##Objetivo
 
-Disponibilizar um modelo de arquitetura de uma aplicação ASP.NET MVC utilizando conceitos de DDD e ASP.NET Identity
+Disponibilizar um sistema onde o usuário possa gerenciar todos os tipos de gastos e controlar seus gastos
