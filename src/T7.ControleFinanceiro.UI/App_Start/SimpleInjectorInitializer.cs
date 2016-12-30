@@ -11,7 +11,6 @@ using SimpleInjector.Integration.Web.Mvc;
 using WebActivator;
 
 [assembly: PostApplicationStartMethod(typeof(SimpleInjectorInitializer), "Initialize")]
-
 namespace T7.ControleFinanceiro.UI.App_Start
 {
     public static class SimpleInjectorInitializer
