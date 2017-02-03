@@ -26,9 +26,15 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository
 
         #endregion
 
+        #region Methods
+
         public IEnumerable<UserEntity> UsersInRole(string idRole)
         {
-            throw new NotImplementedException();
+            return _db.UserRoles
+                      .Join(_db.User, role => role.UserId, user => user.Id, (a, b) => new { Roles = a, Users = b })
+                      .Where(w => w.Roles.RoleId == idRole)
+                      .Select(s => s.Users)
+                      .ToList();
         }
 
         public void Dispose()
@@ -36,5 +42,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository
             _db.Dispose();
             GC.SuppressFinalize(this);
         }
+
+        #endregion
     }
 }

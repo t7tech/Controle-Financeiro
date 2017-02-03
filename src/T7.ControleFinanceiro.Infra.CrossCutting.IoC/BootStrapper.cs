@@ -20,8 +20,9 @@ namespace T7.ControleFinanceiro.Infra.CrossCutting.IoC
             container.RegisterPerWebRequest<ApplicationUserManager>();
             container.RegisterPerWebRequest<ApplicationSignInManager>();
 
-            container.RegisterPerWebRequest<IUsuarioRepository, UsuarioRepository>();
+            container.RegisterPerWebRequest<IUsuarioRepository, UserRepository>();
             container.RegisterPerWebRequest<IRoleRepository, RoleRepository>();
-        } 
+            container.RegisterPerWebRequest<IUserRolesRepository, UserRolesRepository>();
+        }
     }
 }

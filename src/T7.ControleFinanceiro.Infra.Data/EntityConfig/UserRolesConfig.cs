@@ -7,6 +7,12 @@ namespace T7.ControleFinanceiro.Infra.Data.EntityConfig
     {
         public UserRolesConfig()
         {
+            HasKey(k => new
+            {
+                k.UserId,
+                k.RoleId
+            });
+
             Property(p => p.RoleId)
                 .IsRequired()
                 .HasMaxLength(128);

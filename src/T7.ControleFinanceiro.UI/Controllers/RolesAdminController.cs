@@ -2,13 +2,12 @@
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
+using T7.ControleFinanceiro.Domain.Interface.Repository;
 
 namespace T7.ControleFinanceiro.UI.Controllers
 {
@@ -17,11 +16,13 @@ namespace T7.ControleFinanceiro.UI.Controllers
 
         private readonly ApplicationRoleManager _roleManager;
         private ApplicationUserManager _userManager;
+        private IUserRolesRepository _userRoles;
 
-        public RolesAdminController(ApplicationUserManager userManager, ApplicationRoleManager roleManager)
+        public RolesAdminController(ApplicationUserManager userManager, ApplicationRoleManager roleManager, IUserRolesRepository userRoles)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _userRoles = userRoles;
         }
 
         public ActionResult Index()
@@ -35,19 +36,19 @@ namespace T7.ControleFinanceiro.UI.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             var role = await _roleManager.FindByIdAsync(id);
-
-            var users = new List<ApplicationUser>();
-
-            foreach (var user in _userManager.Users.ToList())
-            {
-                if (await _userManager.IsInRoleAsync(user.Id, role.Name))
-                {
-                    users.Add(user);
-                }
-            }
+            var users = _userRoles.UsersInRole(id);
+            
+            //var users = new List<ApplicationUser>();
+            //foreach (var user in _userManager.Users.ToList())
+            //{
+            //    if (await _userManager.IsInRoleAsync(user.Id, role.Name))
+            //    {
+            //        users.Add(user);
+            //    }
+            //}
 
             ViewBag.Users = users;
-            ViewBag.UserCount = users.Count();
+            //ViewBag.UserCount = users.Count();
             return View(role);
         }
 

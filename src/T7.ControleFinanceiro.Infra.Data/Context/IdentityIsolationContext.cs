@@ -15,7 +15,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Context
 
         #region DbSet
 
-        public DbSet<UserEntity> Usuarios { get; set; }
+        public DbSet<UserEntity> User { get; set; }
         public DbSet<RoleEntity> Role { get; set; }
         public DbSet<UserRolesEntity> UserRoles { get; set; }
 

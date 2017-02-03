@@ -7,27 +7,27 @@ using T7.ControleFinanceiro.Infra.Data.Context;
 
 namespace T7.ControleFinanceiro.Infra.Data.Repository
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class UserRepository : IUsuarioRepository
     {
         private readonly IdentityIsolationContext _db;
 
-        public UsuarioRepository()
+        public UserRepository()
         {
             _db = new IdentityIsolationContext();
         }
 
         public UserEntity ObterPorId(string id)
         {
-            return _db.Usuarios.Find(id);
+            return _db.User.Find(id);
         }
 
         public IEnumerable<UserEntity> ObterTodos()
         {
-            return _db.Usuarios.ToList();
+            return _db.User.ToList();
         }
         public void DesativarLock(string id)
         {
-            _db.Usuarios.Find(id).LockoutEnabled = false;
+            _db.User.Find(id).LockoutEnabled = false;
             _db.SaveChanges();
         }
 
