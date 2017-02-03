@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T7.ControleFinanceiro.Service", "src\T7.ControleFinanceiro.Service\T7.ControleFinanceiro.Service.csproj", "{789952FB-F9D0-4879-A098-700162C11F3A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Tests", "6 - Tests", "{6549A082-FB81-4A77-8ACD-932BA2516C63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T7.ControleFinanceiro.Test", "src\T7.ControleFinanceiro.Test\T7.ControleFinanceiro.Test.csproj", "{26734C68-BEBA-43EC-9A2B-F5AC0E8B830D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,10 @@ Global
 		{789952FB-F9D0-4879-A098-700162C11F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{789952FB-F9D0-4879-A098-700162C11F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{789952FB-F9D0-4879-A098-700162C11F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26734C68-BEBA-43EC-9A2B-F5AC0E8B830D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26734C68-BEBA-43EC-9A2B-F5AC0E8B830D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26734C68-BEBA-43EC-9A2B-F5AC0E8B830D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26734C68-BEBA-43EC-9A2B-F5AC0E8B830D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,5 +94,6 @@ Global
 		{DAC5216E-41D8-44AD-90A3-DC88F7A4A2CE} = {7D1C6E18-9267-4800-9708-1B7627A72AA2}
 		{E2F84A37-B328-4FA3-8DAD-AD61B6DE9324} = {CD217753-B479-46CB-AF35-B320819E2291}
 		{789952FB-F9D0-4879-A098-700162C11F3A} = {6229CCF3-45ED-4312-9EC7-20632F725CE5}
+		{26734C68-BEBA-43EC-9A2B-F5AC0E8B830D} = {6549A082-FB81-4A77-8ACD-932BA2516C63}
 	EndGlobalSection
 EndGlobal

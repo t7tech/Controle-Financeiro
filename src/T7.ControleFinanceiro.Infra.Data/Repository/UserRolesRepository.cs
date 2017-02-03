@@ -37,6 +37,40 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository
                       .ToList();
         }
 
+        public void AddUserInRole(string idRole, string idUser)
+        {
+            var userRole = new UserRolesEntity
+            {
+                RoleId = idRole,
+                UserId = idUser
+            };
+
+            _db.UserRoles.Add(userRole);
+            _db.SaveChanges();
+        }
+
+        public void AddUserInRole(string idRole, string idUser)
+        {
+            var userRole = new UserRolesEntity
+            {
+                RoleId = idRole,
+                UserId = idUser
+            };
+
+            _db.UserRoles.Add(userRole);
+            _db.SaveChanges();
+        }
+
+        public void RemoveUserInRole(string idRole, string idUser)
+        {
+            var userRole = _db.UserRoles.Find(idRole, idUser);
+            if (userRole != null)
+            {
+                _db.UserRoles.Remove(userRole);
+                _db.SaveChanges();
+            }
+        }
+
         public void Dispose()
         {
             _db.Dispose();

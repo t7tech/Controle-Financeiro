@@ -29,6 +29,16 @@ namespace T7.ControleFinanceiro.Service
             return _repository.UsersInRole(idRole);
         }
 
+        public void AddUserInRole(string idRole, string idUser)
+        {
+            _repository.AddUserInRole(idRole, idUser);
+        }
+
+        public void RemoveUserInRole(string idRole, string idUser)
+        {
+            _repository.RemoveUserInRole(idRole, idUser);
+        }
+
         #endregion
     }
 }
