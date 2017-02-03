@@ -6,8 +6,8 @@ namespace T7.ControleFinanceiro.Domain.Interface.Repository
 {
     public interface IUsuarioRepository : IDisposable
     {
-        Usuario ObterPorId(string id);
-        IEnumerable<Usuario> ObterTodos();
+        UserEntity ObterPorId(string id);
+        IEnumerable<UserEntity> ObterTodos();
         void DesativarLock(string id);
     }
 }

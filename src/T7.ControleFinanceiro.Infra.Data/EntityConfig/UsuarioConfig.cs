@@ -3,7 +3,7 @@ using T7.ControleFinanceiro.Domain.Entities;
 
 namespace T7.ControleFinanceiro.Infra.Data.EntityConfig
 {
-    public class UsuarioConfig : EntityTypeConfiguration<Usuario>
+    public class UsuarioConfig : EntityTypeConfiguration<UserEntity>
     {
         public UsuarioConfig()
         {

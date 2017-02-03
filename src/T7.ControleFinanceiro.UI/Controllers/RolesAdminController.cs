@@ -24,28 +24,20 @@ namespace T7.ControleFinanceiro.UI.Controllers
             _roleManager = roleManager;
         }
 
-        
-
-        //
-        // GET: /Roles/
         public ActionResult Index()
         {
             return View(_roleManager.Roles);
         }
 
-        //
-        // GET: /Roles/Details/5
         public async Task<ActionResult> Details(string id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             var role = await _roleManager.FindByIdAsync(id);
-            // Get the list of Users in this Role
+
             var users = new List<ApplicationUser>();
 
-            // Get the list of Users in this Role
             foreach (var user in _userManager.Users.ToList())
             {
                 if (await _userManager.IsInRoleAsync(user.Id, role.Name))

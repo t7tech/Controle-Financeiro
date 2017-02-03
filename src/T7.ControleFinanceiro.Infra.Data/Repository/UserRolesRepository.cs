@@ -1,34 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using T7.ControleFinanceiro.Domain.Entities;
 using T7.ControleFinanceiro.Domain.Interface.Repository;
 using T7.ControleFinanceiro.Infra.Data.Context;
 
 namespace T7.ControleFinanceiro.Infra.Data.Repository
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class UserRolesRepository : IUserRolesRepository
     {
+        #region Attributes
+
         private readonly IdentityIsolationContext _db;
 
-        public UsuarioRepository()
+        #endregion
+
+        #region Ctor
+
+        public UserRolesRepository()
         {
             _db = new IdentityIsolationContext();
         }
 
-        public UserEntity ObterPorId(string id)
-        {
-            return _db.Usuarios.Find(id);
-        }
+        #endregion
 
-        public IEnumerable<UserEntity> ObterTodos()
+        public IEnumerable<UserEntity> UsersInRole(string idRole)
         {
-            return _db.Usuarios.ToList();
-        }
-        public void DesativarLock(string id)
-        {
-            _db.Usuarios.Find(id).LockoutEnabled = false;
-            _db.SaveChanges();
+            throw new NotImplementedException();
         }
 
         public void Dispose()

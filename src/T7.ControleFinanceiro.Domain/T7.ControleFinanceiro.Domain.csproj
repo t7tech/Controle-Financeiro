@@ -33,7 +33,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\RoleEntity.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
+    <Compile Include="Entities\UserRolesEntity.cs" />
+    <Compile Include="Interface\Repository\IRoleRepository.cs" />
+    <Compile Include="Interface\Repository\IUserRolesRepository.cs" />
     <Compile Include="Interface\Repository\IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -3,9 +3,9 @@ using System;
 
 namespace T7.ControleFinanceiro.Domain.Entities
 {
-    public class Usuario
+    public class UserEntity
     {
-        public Usuario()
+        public UserEntity()
         {
             Id = Guid.NewGuid().ToString();
         }
