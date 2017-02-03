@@ -11,5 +11,7 @@ namespace T7.ControleFinanceiro.Domain.Interface.Repository
     {
         RoleEntity ObterPorId(string id);
         IEnumerable<RoleEntity> ObterTodos();
+        void UpdateName(string id, string name);
+        void Delete(string id);
     }
 }

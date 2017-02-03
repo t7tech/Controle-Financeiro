@@ -5,11 +5,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Pre
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{499A6D70-99FE-418E-BCBB-D9B260C3E642}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{4F8867E2-4521-4E1C-B57F-333FFBB09402}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{4F8867E2-4521-4E1C-B57F-333FFBB09402}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - Data", "3.1 - Data", "{A7D2FB6D-E397-4846-8E93-715AA638AE6F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{A7D2FB6D-E397-4846-8E93-715AA638AE6F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2 - CrossCutting", "3.2 - CrossCutting", "{7D1C6E18-9267-4800-9708-1B7627A72AA2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{7D1C6E18-9267-4800-9708-1B7627A72AA2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T7.ControleFinanceiro.UI", "src\T7.ControleFinanceiro.UI\T7.ControleFinanceiro.UI.csproj", "{73AAEC7C-9DF5-457A-8096-E2B915B4FAF2}"
 EndProject
@@ -23,9 +23,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T7.ControleFinanceiro.Infra
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "T7.ControleFinanceiro.Database", "src\T7.ControleFinanceiro.Database\T7.ControleFinanceiro.Database.sqlproj", "{B3FD48CB-0847-4C65-A492-992E82452F88}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Commom", "4 - Commom", "{CD217753-B479-46CB-AF35-B320819E2291}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Commom", "5 - Commom", "{CD217753-B479-46CB-AF35-B320819E2291}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T7.ControleFinanceiro.Core", "src\T7.ControleFinanceiro.Core\T7.ControleFinanceiro.Core.csproj", "{E2F84A37-B328-4FA3-8DAD-AD61B6DE9324}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service", "{6229CCF3-45ED-4312-9EC7-20632F725CE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T7.ControleFinanceiro.Service", "src\T7.ControleFinanceiro.Service\T7.ControleFinanceiro.Service.csproj", "{789952FB-F9D0-4879-A098-700162C11F3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,10 @@ Global
 		{E2F84A37-B328-4FA3-8DAD-AD61B6DE9324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2F84A37-B328-4FA3-8DAD-AD61B6DE9324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2F84A37-B328-4FA3-8DAD-AD61B6DE9324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789952FB-F9D0-4879-A098-700162C11F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789952FB-F9D0-4879-A098-700162C11F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789952FB-F9D0-4879-A098-700162C11F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789952FB-F9D0-4879-A098-700162C11F3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,5 +85,6 @@ Global
 		{9062B1C5-F32D-435E-93B2-2E7F6268B2A1} = {7D1C6E18-9267-4800-9708-1B7627A72AA2}
 		{DAC5216E-41D8-44AD-90A3-DC88F7A4A2CE} = {7D1C6E18-9267-4800-9708-1B7627A72AA2}
 		{E2F84A37-B328-4FA3-8DAD-AD61B6DE9324} = {CD217753-B479-46CB-AF35-B320819E2291}
+		{789952FB-F9D0-4879-A098-700162C11F3A} = {6229CCF3-45ED-4312-9EC7-20632F725CE5}
 	EndGlobalSection
 EndGlobal

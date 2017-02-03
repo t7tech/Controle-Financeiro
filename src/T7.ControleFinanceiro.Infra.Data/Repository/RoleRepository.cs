@@ -38,6 +38,19 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository
             return _db.Role.ToList();
         }
 
+        public void UpdateName(string id, string name)
+        {
+            _db.Role.Find(id).Name = name;
+            _db.SaveChanges();
+        }
+
+        public void Delete(string id)
+        {
+            var role = _db.Role.Find(id);
+            _db.Role.Remove(role);
+            _db.SaveChanges();
+        }
+
         public void Dispose()
         {
             _db.Dispose();
