@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using T7.ControleFinanceiro.Domain.Entities;
 
-namespace T7.ControleFinanceiro.Domain.Interface.Repository
+namespace T7.ControleFinanceiro.Domain.Interface.Service
 {
-    public interface IUsuarioRepository : IDisposable
+    public interface IUserService
     {
         UserEntity ObterPorId(string id);
         IEnumerable<UserEntity> ObterTodos();

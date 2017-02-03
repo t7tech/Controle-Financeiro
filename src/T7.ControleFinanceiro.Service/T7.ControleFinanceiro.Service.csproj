@@ -39,8 +39,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Account\RoleService.cs" />
+    <Compile Include="Account\UserService.cs" />
+    <Compile Include="Account\UserRolesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\T7.ControleFinanceiro.Domain\T7.ControleFinanceiro.Domain.csproj">
+      <Project>{659259fe-26b5-4868-935c-b4a08bcdd924}</Project>
+      <Name>T7.ControleFinanceiro.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\T7.ControleFinanceiro.Infra.Data\T7.ControleFinanceiro.Infra.Data.csproj">
+      <Project>{7452498e-395c-4bec-87af-1b2b3aa8bd10}</Project>
+      <Name>T7.ControleFinanceiro.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

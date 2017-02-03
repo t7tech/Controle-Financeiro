@@ -1,11 +1,13 @@
-﻿using T7.ControleFinanceiro.Domain.Interface.Repository;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using SimpleInjector;
+using T7.ControleFinanceiro.Domain.Interface.Repository;
+using T7.ControleFinanceiro.Domain.Interface.Service;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Context;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 using T7.ControleFinanceiro.Infra.Data.Repository;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using SimpleInjector;
+using T7.ControleFinanceiro.Service;
 
 namespace T7.ControleFinanceiro.Infra.CrossCutting.IoC
 {
@@ -20,9 +22,21 @@ namespace T7.ControleFinanceiro.Infra.CrossCutting.IoC
             container.RegisterPerWebRequest<ApplicationUserManager>();
             container.RegisterPerWebRequest<ApplicationSignInManager>();
 
-            container.RegisterPerWebRequest<IUsuarioRepository, UserRepository>();
+            #region Service
+
+            container.RegisterPerWebRequest<IUserService, UserService>();
+            container.RegisterPerWebRequest<IRoleService, RoleService>();
+            container.RegisterPerWebRequest<IUserRolesService, UserRolesService>();
+
+            #endregion
+
+            #region Repository
+
+            container.RegisterPerWebRequest<IUserRepository, UserRepository>();
             container.RegisterPerWebRequest<IRoleRepository, RoleRepository>();
             container.RegisterPerWebRequest<IUserRolesRepository, UserRolesRepository>();
+
+            #endregion
         }
     }
 }

@@ -7,7 +7,7 @@ using T7.ControleFinanceiro.Infra.Data.Context;
 
 namespace T7.ControleFinanceiro.Infra.Data.Repository
 {
-    public class UserRepository : IUsuarioRepository
+    public class UserRepository : IUserRepository
     {
         private readonly IdentityIsolationContext _db;
 

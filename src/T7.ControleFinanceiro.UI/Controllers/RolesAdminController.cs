@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -7,7 +6,7 @@ using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using T7.ControleFinanceiro.Domain.Interface.Repository;
+using T7.ControleFinanceiro.Domain.Interface.Service;
 
 namespace T7.ControleFinanceiro.UI.Controllers
 {
@@ -16,9 +15,9 @@ namespace T7.ControleFinanceiro.UI.Controllers
 
         private readonly ApplicationRoleManager _roleManager;
         private ApplicationUserManager _userManager;
-        private IUserRolesRepository _userRoles;
+        private IUserRolesService _userRoles;
 
-        public RolesAdminController(ApplicationUserManager userManager, ApplicationRoleManager roleManager, IUserRolesRepository userRoles)
+        public RolesAdminController(ApplicationUserManager userManager, ApplicationRoleManager roleManager, IUserRolesService userRoles)
         {
             _userManager = userManager;
             _roleManager = roleManager;

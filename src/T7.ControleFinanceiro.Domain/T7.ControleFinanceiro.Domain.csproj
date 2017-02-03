@@ -38,9 +38,13 @@
     <Compile Include="Entities\UserRolesEntity.cs" />
     <Compile Include="Interface\Repository\IRoleRepository.cs" />
     <Compile Include="Interface\Repository\IUserRolesRepository.cs" />
-    <Compile Include="Interface\Repository\IUsuarioRepository.cs" />
+    <Compile Include="Interface\Repository\IUserRepository.cs" />
+    <Compile Include="Interface\Service\IRoleService.cs" />
+    <Compile Include="Interface\Service\IUserRolesService.cs" />
+    <Compile Include="Interface\Service\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

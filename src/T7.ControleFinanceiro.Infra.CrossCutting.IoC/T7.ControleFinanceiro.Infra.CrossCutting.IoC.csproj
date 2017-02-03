@@ -78,6 +78,10 @@
       <Project>{7452498e-395c-4bec-87af-1b2b3aa8bd10}</Project>
       <Name>T7.ControleFinanceiro.Infra.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\T7.ControleFinanceiro.Service\T7.ControleFinanceiro.Service.csproj">
+      <Project>{789952fb-f9d0-4879-a098-700162c11f3a}</Project>
+      <Name>T7.ControleFinanceiro.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
