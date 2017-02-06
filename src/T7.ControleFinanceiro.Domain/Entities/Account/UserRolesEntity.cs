@@ -1,5 +1,5 @@
 ﻿
-namespace T7.ControleFinanceiro.Domain.Entities
+namespace T7.ControleFinanceiro.Domain.Entities.Account
 {
     public class UserRolesEntity
     {

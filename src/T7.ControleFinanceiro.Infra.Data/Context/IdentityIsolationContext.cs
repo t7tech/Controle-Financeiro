@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
-using T7.ControleFinanceiro.Domain.Entities;
-using T7.ControleFinanceiro.Infra.Data.EntityConfig;
+using T7.ControleFinanceiro.Domain.Entities.Account;
+using T7.ControleFinanceiro.Infra.Data.EntityConfig.Account;
 
 namespace T7.ControleFinanceiro.Infra.Data.Context
 {

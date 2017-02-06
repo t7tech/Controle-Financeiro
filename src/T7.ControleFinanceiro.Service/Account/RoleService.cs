@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using T7.ControleFinanceiro.Domain.Entities;
-using T7.ControleFinanceiro.Domain.Interface.Repository;
-using T7.ControleFinanceiro.Domain.Interface.Service;
+using T7.ControleFinanceiro.Domain.Entities.Account;
+using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
+using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 
-namespace T7.ControleFinanceiro.Service
+namespace T7.ControleFinanceiro.Service.Account
 {
     public class RoleService : IRoleService
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using T7.ControleFinanceiro.Domain.Entities;
-using T7.ControleFinanceiro.Domain.Interface.Repository;
-using T7.ControleFinanceiro.Domain.Interface.Service;
+using T7.ControleFinanceiro.Domain.Entities.Account;
+using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
+using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 
-namespace T7.ControleFinanceiro.Service
+namespace T7.ControleFinanceiro.Service.Account
 {
     public class UserService : IUserService
     {
@@ -14,19 +14,19 @@ namespace T7.ControleFinanceiro.Service
             _repository = repository;
         }
 
-        public UserEntity ObterPorId(string id)
+        public UserEntity GetById(string id)
         {
-            return _repository.ObterPorId(id);
+            return _repository.GetById(id);
         }
 
-        public IEnumerable<UserEntity> ObterTodos()
+        public IEnumerable<UserEntity> GetAll()
         {
-            return _repository.ObterTodos();
+            return _repository.GetAll();
         }
 
-        public void DesativarLock(string id)
+        public void DisableLock(string id)
         {
-            _repository.DesativarLock(id);
+            _repository.DisableLock(id);
         }
     }
 }

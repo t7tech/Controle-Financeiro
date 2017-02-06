@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using T7.ControleFinanceiro.Domain.Entities;
+﻿using System.Collections.Generic;
+using T7.ControleFinanceiro.Domain.Entities.Account;
 
-namespace T7.ControleFinanceiro.Domain.Interface.Service
+namespace T7.ControleFinanceiro.Domain.Interface.Service.Account
 {
     public interface IUserService
     {
-        UserEntity ObterPorId(string id);
-        IEnumerable<UserEntity> ObterTodos();
-        void DesativarLock(string id);
+        UserEntity GetById(string id);
+        IEnumerable<UserEntity> GetAll();
+        void DisableLock(string id);
     }
 }

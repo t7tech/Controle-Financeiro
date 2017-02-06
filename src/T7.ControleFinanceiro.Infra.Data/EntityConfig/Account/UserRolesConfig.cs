@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using T7.ControleFinanceiro.Domain.Entities;
+using T7.ControleFinanceiro.Domain.Entities.Account;
 
-namespace T7.ControleFinanceiro.Infra.Data.EntityConfig
+namespace T7.ControleFinanceiro.Infra.Data.EntityConfig.Account
 {
     public class UserRolesConfig : EntityTypeConfiguration<UserRolesEntity>
     {

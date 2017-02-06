@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using T7.ControleFinanceiro.Domain.Entities;
+﻿using System.Collections.Generic;
+using T7.ControleFinanceiro.Domain.Entities.Account;
 
-namespace T7.ControleFinanceiro.Domain.Interface.Service
+namespace T7.ControleFinanceiro.Domain.Interface.Service.Account
 {
     public interface IRoleService
     {

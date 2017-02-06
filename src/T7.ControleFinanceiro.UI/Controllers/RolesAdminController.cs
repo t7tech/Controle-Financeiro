@@ -6,7 +6,7 @@ using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using T7.ControleFinanceiro.Domain.Interface.Service;
+using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 
 namespace T7.ControleFinanceiro.UI.Controllers
 {

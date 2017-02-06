@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using T7.ControleFinanceiro.Domain.Entities;
-using T7.ControleFinanceiro.Domain.Interface.Repository;
+using System.Collections.Generic;
+using T7.ControleFinanceiro.Domain.Entities.Account;
+using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
 using T7.ControleFinanceiro.Infra.Data.Context;
 
-namespace T7.ControleFinanceiro.Infra.Data.Repository
+namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
 {
     public class UserRolesRepository : IUserRolesRepository
     {
@@ -61,6 +59,9 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository
 
         public void Dispose()
         {
+            if (_db.Database.Connection.State != System.Data.ConnectionState.Closed)
+                _db.Database.Connection.Close();
+
             _db.Dispose();
             GC.SuppressFinalize(this);
         }

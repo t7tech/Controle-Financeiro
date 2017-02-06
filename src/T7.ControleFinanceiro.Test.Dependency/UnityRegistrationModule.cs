@@ -1,8 +1,8 @@
 ﻿using Microsoft.Practices.Unity;
-using T7.ControleFinanceiro.Domain.Interface.Repository;
-using T7.ControleFinanceiro.Domain.Interface.Service;
-using T7.ControleFinanceiro.Infra.Data.Repository;
-using T7.ControleFinanceiro.Service;
+using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
+using T7.ControleFinanceiro.Domain.Interface.Service.Account;
+using T7.ControleFinanceiro.Infra.Data.Repository.Account;
+using T7.ControleFinanceiro.Service.Account;
 using T7.ControleFinanceiro.Test.Commom;
 
 namespace T7.ControleFinanceiro.Test.Dependency
@@ -18,6 +18,12 @@ namespace T7.ControleFinanceiro.Test.Dependency
             // register services
             container.RegisterType<IRoleService, RoleService>();
             container.RegisterType<IRoleRepository, RoleRepository>();
+
+            container.RegisterType<IUserRolesService, UserRolesService>();
+            container.RegisterType<IUserRolesRepository, UserRolesRepository>();
+
+            container.RegisterType<IUserService, UserService>();
+            container.RegisterType<IUserRepository, UserRepository>();
         }
     }
 }

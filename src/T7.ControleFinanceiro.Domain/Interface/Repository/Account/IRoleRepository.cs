@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using T7.ControleFinanceiro.Domain.Entities;
+using T7.ControleFinanceiro.Domain.Entities.Account;
 
-namespace T7.ControleFinanceiro.Domain.Interface.Repository
+namespace T7.ControleFinanceiro.Domain.Interface.Repository.Account
 {
     public interface IRoleRepository : IDisposable
     {

@@ -1,31 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using T7.ControleFinanceiro.Domain.Entities;
-using T7.ControleFinanceiro.Domain.Interface.Repository;
+using System.Collections.Generic;
+using T7.ControleFinanceiro.Domain.Entities.Account;
+using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
 using T7.ControleFinanceiro.Infra.Data.Context;
 
-namespace T7.ControleFinanceiro.Infra.Data.Repository
+namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
 {
     public class UserRepository : IUserRepository
     {
+        #region Attributes
+
         private readonly IdentityIsolationContext _db;
+
+        #endregion
+
+        #region Ctor
 
         public UserRepository()
         {
             _db = new IdentityIsolationContext();
         }
 
-        public UserEntity ObterPorId(string id)
+        #endregion
+
+        #region Methods
+
+        public UserEntity GetById(string id)
         {
             return _db.User.Find(id);
         }
 
-        public IEnumerable<UserEntity> ObterTodos()
+        public IEnumerable<UserEntity> GetAll()
         {
             return _db.User.ToList();
         }
-        public void DesativarLock(string id)
+
+        public void DisableLock(string id)
         {
             _db.User.Find(id).LockoutEnabled = false;
             _db.SaveChanges();
@@ -33,8 +44,13 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository
 
         public void Dispose()
         {
+            if (_db.Database.Connection.State != System.Data.ConnectionState.Closed)
+                _db.Database.Connection.Close();
+
             _db.Dispose();
             GC.SuppressFinalize(this);
         }
+
+        #endregion
     }
 }
