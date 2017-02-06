@@ -28,14 +28,20 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository
 
         #region Methods
 
-        public RoleEntity ObterPorId(string id)
+        public RoleEntity GetById(string id)
         {
             return _db.Role.FirstOrDefault(f => f.Id == id);
         }
 
-        public IEnumerable<RoleEntity> ObterTodos()
+        public IEnumerable<RoleEntity> GetAll()
         {
             return _db.Role.ToList();
+        }
+
+        public void Add(RoleEntity entity)
+        {
+            _db.Role.Add(entity);
+            _db.SaveChanges();
         }
 
         public void UpdateName(string id, string name)
@@ -53,6 +59,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository
 
         public void Dispose()
         {
+            _db.Database.Connection.Close();
             _db.Dispose();
             GC.SuppressFinalize(this);
         }

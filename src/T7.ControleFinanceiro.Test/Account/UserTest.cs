@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace T7.ControleFinanceiro.Test
+namespace T7.ControleFinanceiro.Test.Account
 {
     [TestClass]
-    public class UnitTest1
+    public class UserTest
     {
         [TestMethod]
         public void TestMethod1()

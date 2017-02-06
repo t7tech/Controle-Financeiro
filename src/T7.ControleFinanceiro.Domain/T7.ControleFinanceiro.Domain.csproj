@@ -33,15 +33,15 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\RoleEntity.cs" />
-    <Compile Include="Entities\UserEntity.cs" />
-    <Compile Include="Entities\UserRolesEntity.cs" />
-    <Compile Include="Interface\Repository\IRoleRepository.cs" />
-    <Compile Include="Interface\Repository\IUserRolesRepository.cs" />
-    <Compile Include="Interface\Repository\IUserRepository.cs" />
-    <Compile Include="Interface\Service\IRoleService.cs" />
-    <Compile Include="Interface\Service\IUserRolesService.cs" />
-    <Compile Include="Interface\Service\IUserService.cs" />
+    <Compile Include="Entities\Account\RoleEntity.cs" />
+    <Compile Include="Entities\Account\UserEntity.cs" />
+    <Compile Include="Entities\Account\UserRolesEntity.cs" />
+    <Compile Include="Interface\Repository\Account\IRoleRepository.cs" />
+    <Compile Include="Interface\Repository\Account\IUserRolesRepository.cs" />
+    <Compile Include="Interface\Repository\Account\IUserRepository.cs" />
+    <Compile Include="Interface\Service\Account\IRoleService.cs" />
+    <Compile Include="Interface\Service\Account\IUserRolesService.cs" />
+    <Compile Include="Interface\Service\Account\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

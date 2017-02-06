@@ -24,14 +24,14 @@ namespace T7.ControleFinanceiro.Service
 
         #region Methods
 
-        public RoleEntity ObterPorId(string id)
+        public RoleEntity GetById(string id)
         {
-            return _repository.ObterPorId(id);
+            return _repository.GetById(id);
         }
 
-        public IEnumerable<RoleEntity> ObterTodos()
+        public IEnumerable<RoleEntity> GetAll()
         {
-            return _repository.ObterTodos();
+            return _repository.GetAll();
         }
 
         public void UpdateName(string id, string name)
@@ -42,6 +42,11 @@ namespace T7.ControleFinanceiro.Service
         public void Delete(string id)
         {
             _repository.Delete(id);
+        }
+
+        public void Add(RoleEntity entity)
+        {
+            _repository.Add(entity);
         }
 
         #endregion

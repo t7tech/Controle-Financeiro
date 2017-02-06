@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using T7.ControleFinanceiro.Domain.Entities;
 
-namespace T7.ControleFinanceiro.Domain.Interface.Service
+namespace T7.ControleFinanceiro.Domain.Interface.Repository
 {
-    public interface IRoleService
+    public interface IRoleRepository : IDisposable
     {
-        RoleEntity ObterPorId(string id);
-        IEnumerable<RoleEntity> ObterTodos();
+        RoleEntity GetById(string id);
+        IEnumerable<RoleEntity> GetAll();
         void UpdateName(string id, string name);
         void Delete(string id);
+        void Add(RoleEntity entity);
     }
 }
