@@ -11,12 +11,12 @@ using Microsoft.Owin.Security;
 namespace T7.ControleFinanceiro.UI.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class Account2Controller : Controller
     {
         private  ApplicationSignInManager _signInManager;
         private  ApplicationUserManager _userManager;
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public Account2Controller(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             _userManager = userManager;
             _signInManager = signInManager;
