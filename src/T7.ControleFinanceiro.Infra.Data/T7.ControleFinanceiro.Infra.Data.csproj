@@ -47,10 +47,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\IdentityIsolationContext.cs" />
+    <Compile Include="EntityConfig\Account\ClaimsConfig.cs" />
     <Compile Include="EntityConfig\Account\RoleConfig.cs" />
     <Compile Include="EntityConfig\Account\UserRolesConfig.cs" />
     <Compile Include="EntityConfig\Account\UsuarioConfig.cs" />
+    <Compile Include="Migrations\201702071431155_InitialBaseLine.cs" />
+    <Compile Include="Migrations\201702071431155_InitialBaseLine.Designer.cs">
+      <DependentUpon>201702071431155_InitialBaseLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071431404_AddTableClaim.cs" />
+    <Compile Include="Migrations\201702071431404_AddTableClaim.Designer.cs">
+      <DependentUpon>201702071431404_AddTableClaim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Account\ClaimRepository.cs" />
     <Compile Include="Repository\Account\RoleRepository.cs" />
     <Compile Include="Repository\Account\UserRolesRepository.cs" />
     <Compile Include="Repository\Account\UserRepository.cs" />
@@ -64,6 +75,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702071431155_InitialBaseLine.resx">
+      <DependentUpon>201702071431155_InitialBaseLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071431404_AddTableClaim.resx">
+      <DependentUpon>201702071431404_AddTableClaim.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

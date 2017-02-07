@@ -6,6 +6,7 @@ namespace T7.ControleFinanceiro.Domain.Interface.Service.Account
     public interface IUserService
     {
         UserEntity GetById(string id);
+        IEnumerable<UserEntity> GetByRole(string role);
         IEnumerable<UserEntity> GetAll();
         void DisableLock(string id);
     }

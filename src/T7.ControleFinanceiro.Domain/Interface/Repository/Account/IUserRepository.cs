@@ -7,6 +7,7 @@ namespace T7.ControleFinanceiro.Domain.Interface.Repository.Account
     public interface IUserRepository : IDisposable
     {
         UserEntity GetById(string id);
+        IEnumerable<UserEntity> GetByRole(string role);
         IEnumerable<UserEntity> GetAll();
         void DisableLock(string id);
     }

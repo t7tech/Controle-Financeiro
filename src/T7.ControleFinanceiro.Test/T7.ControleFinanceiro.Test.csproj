@@ -73,6 +73,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Account\RoleTest.cs" />
+    <Compile Include="Account\ClaimsTest.cs" />
     <Compile Include="Account\UserRoleTest.cs" />
     <Compile Include="Account\UserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

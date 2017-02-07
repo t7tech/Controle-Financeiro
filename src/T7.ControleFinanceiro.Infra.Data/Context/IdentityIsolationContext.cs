@@ -9,7 +9,10 @@ namespace T7.ControleFinanceiro.Infra.Data.Context
         #region ctor
 
         public IdentityIsolationContext()
-            : base("DefaultConnection") { }
+            : base("DefaultConnection")
+        {
+            Database.SetInitializer<IdentityIsolationContext>(null);
+        }
 
         #endregion
 
@@ -18,6 +21,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Context
         public DbSet<UserEntity> User { get; set; }
         public DbSet<RoleEntity> Role { get; set; }
         public DbSet<UserRolesEntity> UserRoles { get; set; }
+        public DbSet<ClaimsEntity> Claims { get; set; }
 
         #endregion
 
@@ -28,6 +32,9 @@ namespace T7.ControleFinanceiro.Infra.Data.Context
             modelBuilder.Configurations.Add(new UsuarioConfig());
             modelBuilder.Configurations.Add(new RoleConfig());
             modelBuilder.Configurations.Add(new UserRolesConfig());
+            modelBuilder.Configurations.Add(new ClaimsConfig());
+
+            modelBuilder.Properties<string>().Configure(p => p.HasColumnType("varchar"));
 
             base.OnModelCreating(modelBuilder);
         }

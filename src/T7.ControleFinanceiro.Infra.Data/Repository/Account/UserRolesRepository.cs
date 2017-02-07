@@ -17,6 +17,9 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
 
         #region Ctor
 
+        /// <summary>
+        /// 
+        /// </summary>
         public UserRolesRepository()
         {
             _db = new IdentityIsolationContext();
@@ -26,6 +29,11 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
 
         #region Methods
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idRole"></param>
+        /// <returns></returns>
         public IEnumerable<UserEntity> UsersInRole(string idRole)
         {
             return _db.UserRoles
@@ -35,6 +43,11 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
                       .ToList();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idRole"></param>
+        /// <param name="idUser"></param>
         public void AddUserInRole(string idRole, string idUser)
         {
             var userRole = new UserRolesEntity
@@ -47,6 +60,11 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
             _db.SaveChanges();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idRole"></param>
+        /// <param name="idUser"></param>
         public void RemoveUserInRole(string idRole, string idUser)
         {
             var userRole = _db.UserRoles.Find(idRole, idUser);
@@ -57,6 +75,9 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
             if (_db.Database.Connection.State != System.Data.ConnectionState.Closed)

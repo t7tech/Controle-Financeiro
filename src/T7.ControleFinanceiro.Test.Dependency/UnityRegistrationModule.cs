@@ -17,13 +17,13 @@ namespace T7.ControleFinanceiro.Test.Dependency
 
             // register services
             container.RegisterType<IRoleService, RoleService>();
-            container.RegisterType<IRoleRepository, RoleRepository>();
-
-            container.RegisterType<IUserRolesService, UserRolesService>();
-            container.RegisterType<IUserRolesRepository, UserRolesRepository>();
-
             container.RegisterType<IUserService, UserService>();
-            container.RegisterType<IUserRepository, UserRepository>();
+            container.RegisterType<IUserRolesService, UserRolesService>();
+            container.RegisterType<IClaimService, ClaimService>();
+
+            container.RegisterType<IRoleRepository, RoleRepository>();
+            container.RegisterType<IUserRolesRepository, UserRolesRepository>();
+            container.RegisterType<IClaimRepository, ClaimRepository>();
         }
     }
 }
