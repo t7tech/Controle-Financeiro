@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using T7.ControleFinanceiro.Domain.Entities.Account;
 using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
 using T7.ControleFinanceiro.Infra.Data.Context;
 
 namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
 {
-    public class UserRepository : IUserRepository
+    public class UserClaimsRepository : IUserClaimsRepository
     {
         #region Attributes
 
@@ -20,7 +22,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
         /// <summary>
         /// 
         /// </summary>
-        public UserRepository()
+        public UserClaimsRepository()
         {
             _db = new IdentityDbContext();
         }
@@ -32,44 +34,31 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public UserEntity GetById(string id)
+        /// <param name="entity"></param>
+        public void Add(UserClaimsEntity entity)
         {
-            return _db.User.Find(id);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="role"></param>
-        /// <returns></returns>
-        public IEnumerable<UserEntity> GetByRole(string role)
-        {
-            return _db.UserRoles
-                      .Join(_db.User, userRole => userRole.UserId, user => user.Id, (a, b) => new { Role = a, User = b })
-                      .Where(w => w.Role.RoleId == role)
-                      .Select(s => s.User)
-                      .ToList();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<UserEntity> GetAll()
-        {
-            return _db.User.ToList();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        public void DisableLock(string id)
-        {
-            _db.User.Find(id).LockoutEnabled = false;
+            _db.UserClaims.Add(entity);
             _db.SaveChanges();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public UserClaimsEntity GetById(int id)
+        {
+            return _db.UserClaims.FirstOrDefault(f => f.Id == id);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<UserClaimsEntity> GetAll()
+        {
+            return _db.UserClaims.ToList();
         }
 
         /// <summary>

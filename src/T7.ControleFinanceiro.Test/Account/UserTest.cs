@@ -7,11 +7,19 @@ namespace T7.ControleFinanceiro.Test.Account
     [TestClass]
     public class UserTest : TestBase
     {
+        /*
+        ------------------------------------------------------------------
+        |                         Users                                  |
+        ------------------------------------------------------------------
+        |                 ID                  |        NAME              |
+        |305c5c47-1b83-4ccb-8c51-21a04e8cde98 |Julio	Cesar            |
+        ------------------------------------------------------------------
+        */
         [TestMethod]
         public void TestGetById()
         {
             var service = GetService<IUserService>();
-            var result = service.GetById("");
+            var result = service.GetById("305c5c47-1b83-4ccb-8c51-21a04e8cde98");
 
             Assert.IsNull(result);
         }

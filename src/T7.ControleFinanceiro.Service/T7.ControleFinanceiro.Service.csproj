@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Account\ClaimService.cs" />
     <Compile Include="Account\RoleService.cs" />
+    <Compile Include="Account\UserClaimsService.cs" />
     <Compile Include="Account\UserService.cs" />
     <Compile Include="Account\UserRolesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

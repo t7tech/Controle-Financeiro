@@ -11,7 +11,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
     {
         #region Attributes
 
-        private readonly IdentityIsolationContext _db;
+        private readonly IdentityDbContext _db;
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Repository.Account
         /// </summary>
         public UserRolesRepository()
         {
-            _db = new IdentityIsolationContext();
+            _db = new IdentityDbContext();
         }
 
         #endregion

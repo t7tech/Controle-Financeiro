@@ -6,7 +6,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Migrations
     using System.Linq;
     using T7.ControleFinanceiro.Infra.Data.Context;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<IdentityIsolationContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<IdentityDbContext>
     {
         public Configuration()
         {
@@ -14,7 +14,7 @@ namespace T7.ControleFinanceiro.Infra.Data.Migrations
             AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(IdentityIsolationContext context)
+        protected override void Seed(IdentityDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

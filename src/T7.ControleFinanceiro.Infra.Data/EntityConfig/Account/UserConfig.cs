@@ -3,9 +3,9 @@ using T7.ControleFinanceiro.Domain.Entities.Account;
 
 namespace T7.ControleFinanceiro.Infra.Data.EntityConfig.Account
 {
-    public class UsuarioConfig : EntityTypeConfiguration<UserEntity>
+    public class UserConfig : EntityTypeConfiguration<UserEntity>
     {
-        public UsuarioConfig()
+        public UserConfig()
         {
             HasKey(u => u.Id);
 
@@ -20,6 +20,17 @@ namespace T7.ControleFinanceiro.Infra.Data.EntityConfig.Account
             Property(u => u.UserName)
                 .IsRequired()
                 .HasMaxLength(256);
+
+            Property(u => u.Name)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            Property(u => u.LastName)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            Property(u => u.DateBirth)
+                .IsRequired();
 
             ToTable("AspNetUsers");
         }

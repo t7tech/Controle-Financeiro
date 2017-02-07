@@ -33,5 +33,11 @@ namespace T7.ControleFinanceiro.Domain.Entities.Account
         public virtual int AccessFailedCount { get; set; }
 
         public virtual string UserName { get; set; }
+
+        public string Name { get; set; }
+
+        public string LastName { get; set; }
+
+        public DateTime DateBirth { get; set; }
     }
 }

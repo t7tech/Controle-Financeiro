@@ -35,14 +35,17 @@
   <ItemGroup>
     <Compile Include="Entities\Account\ClaimsEntity.cs" />
     <Compile Include="Entities\Account\RoleEntity.cs" />
+    <Compile Include="Entities\Account\UserClaimsEntity.cs" />
     <Compile Include="Entities\Account\UserEntity.cs" />
     <Compile Include="Entities\Account\UserRolesEntity.cs" />
     <Compile Include="Interface\Repository\Account\IClaimRepository.cs" />
     <Compile Include="Interface\Repository\Account\IRoleRepository.cs" />
+    <Compile Include="Interface\Repository\Account\IUserClaimsRepository.cs" />
     <Compile Include="Interface\Repository\Account\IUserRolesRepository.cs" />
     <Compile Include="Interface\Repository\Account\IUserRepository.cs" />
     <Compile Include="Interface\Service\Account\IClaimService.cs" />
     <Compile Include="Interface\Service\Account\IRoleService.cs" />
+    <Compile Include="Interface\Service\Account\IUserClaimsService.cs" />
     <Compile Include="Interface\Service\Account\IUserRolesService.cs" />
     <Compile Include="Interface\Service\Account\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
