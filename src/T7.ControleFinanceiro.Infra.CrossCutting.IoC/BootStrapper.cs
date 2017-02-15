@@ -15,6 +15,8 @@ namespace T7.ControleFinanceiro.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(Container container)
         {
+            #region Identity
+
             container.RegisterPerWebRequest<ApplicationDbContext>();
             container.RegisterPerWebRequest<IUserStore<ApplicationUser>>(() => new UserStore<ApplicationUser>(new ApplicationDbContext()));
             container.RegisterPerWebRequest<IRoleStore<IdentityRole, string>>(() => new RoleStore<IdentityRole>());
@@ -22,11 +24,14 @@ namespace T7.ControleFinanceiro.Infra.CrossCutting.IoC
             container.RegisterPerWebRequest<ApplicationUserManager>();
             container.RegisterPerWebRequest<ApplicationSignInManager>();
 
+            #endregion
+
             #region Service
 
             container.RegisterPerWebRequest<IUserService, UserService>();
             container.RegisterPerWebRequest<IRoleService, RoleService>();
             container.RegisterPerWebRequest<IUserRolesService, UserRolesService>();
+            container.RegisterPerWebRequest<IRegisterService, RegisterService>();
 
             #endregion
 

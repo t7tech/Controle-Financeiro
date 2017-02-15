@@ -34,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Account\ClaimsEntity.cs" />
+    <Compile Include="Entities\Account\RegisterEntity.cs" />
     <Compile Include="Entities\Account\RoleEntity.cs" />
     <Compile Include="Entities\Account\UserClaimsEntity.cs" />
     <Compile Include="Entities\Account\UserEntity.cs" />
@@ -44,6 +45,7 @@
     <Compile Include="Interface\Repository\Account\IUserRolesRepository.cs" />
     <Compile Include="Interface\Repository\Account\IUserRepository.cs" />
     <Compile Include="Interface\Service\Account\IClaimService.cs" />
+    <Compile Include="Interface\Service\Account\IRegisterService.cs" />
     <Compile Include="Interface\Service\Account\IRoleService.cs" />
     <Compile Include="Interface\Service\Account\IUserClaimsService.cs" />
     <Compile Include="Interface\Service\Account\IUserRolesService.cs" />

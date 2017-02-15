@@ -82,7 +82,7 @@
     <Compile Include="Model\LoginViewModel.cs" />
     <Compile Include="Model\ManageLoginsViewModel.cs" />
     <Compile Include="Model\ConfigureTwoFactorViewModel.cs" />
-    <Compile Include="Model\RegisterViewModel.cs" />
+    <Compile Include="Model\RegisterModel.cs" />
     <Compile Include="Model\ResetPasswordViewModel.cs" />
     <Compile Include="Model\RoleViewModel.cs" />
     <Compile Include="Model\SendCodeViewModel.cs" />
