@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_ExternalLayout.cshtml";
+}
+
+@section scripts{
+    <script src="~/app/components/account/register.controller.js"></script>
+}
+
+<div ng-controller="RegisterController">
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form method="post" ng-submit="OnSubmit($event)" role="form" novalidate>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nome" ng-model="Model.Name" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Sobrenome" ng-model="Model.LastName" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="E-mail" ng-model="Model.Email" />
+                </div>
+                <div class="form-group input-group date btn-group-sm">
+                    <input type="text" maxlength="10" class="form-control" placeholder="Data de Nascimento" ng-model="Model.DateBirth" mask="39/19/9999" mask-date="DD/MM/YYYY" ng-pattern="/^(\d{2})\/(\d{2})\/(\d{4})$/" required="" disabled="disabled" style="background-color: #fff;">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Senha" ng-model="Model.Password" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Confirmar Senha" ng-model="Model.ConfirmPassword" />
+                </div>
+                <div class="form-group">
+                    <button type="submit">CRIAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>

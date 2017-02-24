@@ -9,6 +9,8 @@ using SimpleInjector.Advanced;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
 using WebActivator;
+using System.Web.Http;
+using SimpleInjector.Integration.WebApi;
 
 [assembly: PostApplicationStartMethod(typeof(SimpleInjectorInitializer), "Initialize")]
 namespace T7.ControleFinanceiro.UI.App_Start
@@ -36,9 +38,11 @@ namespace T7.ControleFinanceiro.UI.App_Start
             });
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
+            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
             
             container.Verify();
-            
+
+            GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
      

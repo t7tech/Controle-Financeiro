@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using T7.ControleFinanceiro.Core.Validation;
 using T7.ControleFinanceiro.Core.Formatter;
+using T7.ControleFinanceiro.Core.Error;
 
 namespace T7.ControleFinanceiro.Service.Account
 {
@@ -64,13 +65,36 @@ namespace T7.ControleFinanceiro.Service.Account
                 DateBirth = entity.DateBirth
             };
 
+            // Create Account
             var result = await _userManager.CreateAsync(user, entity.Password);
-            if (result.Succeeded)
-            {
-                // await _signInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                await _userManager.SendEmailAsync(user.Id, "Confirme sua Conta", EmailFormatter.GetEmailConfirm(code));
-            }
+            if (!result.Succeeded)
+                throw new CustomException("Não foi possível finalizar seu cadastro");
+
+            // Generate Confirm Code
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user.Id);
+
+            // Send E-mail Confirm
+            await _userManager.SendEmailAsync(user.Id, "Confirme sua Conta", EmailFormatter.GetEmailConfirm(code));
+
+            // Login on System
+            await _signInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public async Task ConfirmEmail(string userId, string code)
+        {
+            /***** Validation *****/
+            AssertionConcern.AssertArgumentNotNull(userId, "Não foi possível confirmar seu cadastro");
+            AssertionConcern.AssertArgumentNotNull(code, "Não foi possível confirmar seu cadastro");
+
+            // Validate Account
+            await _userManager.ConfirmEmailAsync(userId, code);
         }
 
         #endregion
