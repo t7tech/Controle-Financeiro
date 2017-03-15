@@ -3,40 +3,59 @@
 }
 
 @section scripts{
+    <script src="~/app/data/account/register.factory.js"></script>
     <script src="~/app/components/account/register.controller.js"></script>
 }
 
-<div ng-controller="RegisterController">
+<div ng-controller="AccountRegisterController">
 
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form method="post" ng-submit="OnSubmit($event)" role="form" novalidate>
+
+            <form id="formCreateAccount" name="formCreateAccount" method="post" ng-submit="OnSubmit($event)" role="form" novalidate>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nome" ng-model="Model.Name" />
+                    <input type="text" id="txtName" name="txtName" class="form-control" maxlength="50" placeholder="Nome" ng-model="Model.Name" required />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Sobrenome" ng-model="Model.LastName" />
+                    <input type="text" id="txtLastName" name="txtLastName" class="form-control" maxlength="50" placeholder="Sobrenome" ng-model="Model.LastName" required />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="E-mail" ng-model="Model.Email" />
+                    <input type="text" id="txtEmail" name="txtEmail" class="form-control" placeholder="E-mail" maxlength="129" ng-model="Model.Email" ng-pattern="Regex.Email" required />
+                    <div class="ng-hide" ng-show="formCreateAccount.txtEmail.$dirty && formCreateAccount.txtEmail.$invalid">
+                        <small class="text-danger ng-hide" ng-show="formCreateAccount.txtEmail.$error.pattern">Informe um e-mail válido</small>
+                    </div>
                 </div>
                 <div class="form-group input-group date btn-group-sm">
-                    <input type="text" maxlength="10" class="form-control" placeholder="Data de Nascimento" ng-model="Model.DateBirth" mask="39/19/9999" mask-date="DD/MM/YYYY" ng-pattern="/^(\d{2})\/(\d{2})\/(\d{4})$/" required="" disabled="disabled" style="background-color: #fff;">
+                    <input type="text" id="txtDateBirth" name="txtDateBirth" maxlength="10" class="form-control" placeholder="Data de Nascimento" ng-model="Model.DateBirth" mask="39/19/9999" mask-date="DD/MM/YYYY" ng-pattern="/^(\d{2})\/(\d{2})\/(\d{4})$/" required="">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Senha" ng-model="Model.Password" />
+                    <input type="password" id="txtPassword" name="txtPassword" class="form-control" maxlength="50" placeholder="Senha" ng-model="Model.Password" required />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Confirmar Senha" ng-model="Model.ConfirmPassword" />
+                    <input type="password" id="txtConfirmPassword" name="txtConfirmPassword" class="form-control" maxlength="50" placeholder="Confirmar Senha" compare-to="Model.Password" ng-model="Model.ConfirmPassword" required />
+                    <div class="ng-hide" ng-show="formCreateAccount.txtConfirmPassword.$dirty && formCreateAccount.txtConfirmPassword.$invalid">
+                        <small class="text-danger ng-hide" ng-show="formCreateAccount.txtConfirmPassword.$error.compare">As senhas não conferem</small>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit">CRIAR</button>
+                    <button type="submit" ng-disabled="formCreateAccount.$invalid">CRIAR CONTA</button>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>E-mail válido</td>
+                            <td>
+                                {{formCreateAccount.txtEmail.$dirty}}
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </form>
+
         </div>
         <div class="col-md-4"></div>
     </div>

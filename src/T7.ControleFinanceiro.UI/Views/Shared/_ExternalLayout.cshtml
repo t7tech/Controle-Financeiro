@@ -3,15 +3,19 @@
 <head>
     <title>Controle</title>
     <link href="~/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap/bootstrap-datepicker.min.css" rel="stylesheet" />
     @RenderSection("styles", required: false)
     <script src="~/assets/libs/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="~/assets/libs/bootstrap/bootstrap-datepicker.min.js"></script>
     <script src="~/assets/libs/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/assets/scripts/utils.js"></script>
     <script src="~/assets/libs/angularjs/angular.min.js"></script>
     <script src="~/assets/libs/angularjs/angular-animate.min.js"></script>
     <script src="~/assets/libs/angularjs/angular-aria.min.js"></script>
     <script src="~/assets/libs/angularjs/angular-messages.min.js"></script>
     <script src="~/app/app.module.js"></script>
     <script src="~/app/app.config.js"></script>
+    <script src="~/app/shared/directives/compare-to.directive.js"></script>
     @RenderSection("scripts", required: false)
 </head>
 <body>

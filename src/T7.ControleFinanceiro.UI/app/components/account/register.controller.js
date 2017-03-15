@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('confin.ui')
-           .controller('RegisterController', function ($scope, $rootScope) {
+           .controller('AccountRegisterController', function ($scope, $rootScope, Regex, AccountRegisterFactory) {
 
                // Model to Form
                $scope.Model = {
@@ -14,20 +14,42 @@
                    DateBirth: ''
                };
 
+               $scope.Regex = {
+                   Email: Regex.EMAIL
+               };
+
+               $scope.Sending = false;
+
                // <summary>
                // 
                // </summary>
                $scope.OnSubmit = function ($event) {
                    try {
 
+                       // Prevent Default Form Event
                        $event.preventDefault();
 
-                       console.log($scope.Model.Email);
-                       console.log($scope.Model.Password);
-                       console.log($scope.Model.ConfirmPassword);
-                       console.log($scope.Model.Name);
-                       console.log($scope.Model.LastName);
-                       console.log($scope.Model.DateBirth);
+                       // Create Model to Ajax
+                       var model = {
+                           Email: $scope.Model.Email,
+                           Password: $scope.Model.Password,
+                           ConfirmPassword: $scope.Model.ConfirmPassword,
+                           Name: $scope.Model.Name,
+                           LastName: $scope.Model.LastName,
+                           DateBirth: $scope.Model.DateBirth
+                       };
+
+                       // Show Sending Element
+                       $scope.Sending = true;
+
+                       // Send Data to Server
+                       AccountRegisterFactory.Create(model)
+                                             .success(function (response) {
+
+                                             })
+                                             .error(function (response) {
+
+                                             });
 
                    } catch (ex) {
 
