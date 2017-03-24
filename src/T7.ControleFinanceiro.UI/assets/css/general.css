@@ -1,0 +1,9 @@
+﻿.form-alert-validation {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-alert-validation:empty {
+    visibility: hidden;
+}

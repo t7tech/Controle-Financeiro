@@ -7,8 +7,106 @@
     <script src="~/app/components/account/register.controller.js"></script>
 }
 
-<div ng-controller="AccountRegisterController">
+<div class="app-right-section">
+    <div class="app-brand"><span class="highlight">Simplio</span> Admin</div>
+    <div class="app-info">
 
+        <ul class="list">
+            <li>
+                <div class="icon">
+                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                </div>
+                <div class="title">Increase <b>Productivity</b></div>
+            </li>
+            <li>
+                <div class="icon">
+                    <i class="fa fa-cubes" aria-hidden="true"></i>
+                </div>
+                <div class="title">Lot of <b>Components</b></div>
+            </li>
+            <li>
+                <div class="icon">
+                    <i class="fa fa-usd" aria-hidden="true"></i>
+                </div>
+                <div class="title">Forever <b>Free</b></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="app-form">
+    <div class="form-suggestion">
+        Crie sua conta.
+    </div>
+    <div ng-controller="AccountRegisterController">
+
+        <form id="formCreateAccount" name="formCreateAccount" method="post" ng-submit="OnSubmit($event)" role="form" novalidate>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                <input type="text" id="txtName" name="txtName" class="form-control" placeholder="Nome" aria-describedby="basic-addon1" maxlength="50" placeholder="Nome" ng-model="Model.Name" required />
+                {{formCreateAccount.txtName.$invalid}}
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                <input type="text" id="txtLastName" name="txtLastName" class="form-control" placeholder="Sobrenome" aria-describedby="basic-addon1" maxlength="50" placeholder="Sobrenome" ng-model="Model.LastName" required />
+                {{formCreateAccount.txtLastName.$invalid}}
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">
+                    <i class="fa fa-at" aria-hidden="true"></i>
+                </span>
+                <input type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="E-mail" aria-describedby="basic-addon2" maxlength="50" ng-model="Model.Email" ng-pattern="Regex.Email" required />
+                {{formCreateAccount.txtEmail.$invalid}}
+            </div>
+            <div class="ng-hide" ng-show="formCreateAccount.txtEmail.$dirty && formCreateAccount.txtEmail.$invalid">
+                <small class="text-danger ng-hide" ng-show="formCreateAccount.txtEmail.$error.pattern">Informe um e-mail válido</small>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                </span>
+                <input type="text" id="txtDateBirth" name="txtDateBirth" class="form-control" placeholder="Data de Nascimento" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" ng-model="Model.DateBirth" aria-describedby="basic-addon2" required>
+                {{formCreateAccount.txtDateBirth.$invalid}}
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </span>
+                <input type="text" id="txtPassword" name="txtPassword" class="form-control" placeholder="Senha" aria-describedby="basic-addon3" maxlength="50" placeholder="Senha" ng-model="Model.Password" required />
+                {{formCreateAccount.txtPassword.$invalid}}
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon4">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </span>
+                <input type="text" id="txtConfirmPassword" name="txtConfirmPassword" class="form-control" placeholder="Confirmar Senha" aria-describedby="basic-addon4" maxlength="50" placeholder="Confirmar Senha" compare-to="Model.Password" ng-model="Model.ConfirmPassword" required />
+                {{formCreateAccount.txtConfirmPassword.$invalid}}
+                <div class="ng-hide" ng-show="formCreateAccount.txtConfirmPassword.$dirty && formCreateAccount.txtConfirmPassword.$invalid">
+                    <small class="text-danger ng-hide" ng-show="formCreateAccount.txtConfirmPassword.$error.compare">As senhas não conferem</small>
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-success btn-submit" value="CRIAR CONTA" ng-disabled="formCreateAccount.$invalid">
+            </div>
+        </form>
+    </div>
+    <div class="form-line">
+        <div class="title">OR</div>
+    </div>
+    <div class="form-footer">
+        <button type="button" class="btn btn-default btn-sm btn-social __facebook">
+            <div class="info">
+                <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
+                <span class="title">Register w/ Facebook</span>
+            </div>
+        </button>
+    </div>
+</div>
+
+@*   
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
@@ -48,8 +146,7 @@
                     <table>
                         <tr>
                             <td>E-mail válido</td>
-                            <td>
-                                {{formCreateAccount.txtEmail.$dirty}}
+                            <td>{{formCreateAccount.txtEmail.$dirty}}
                             </td>
                         </tr>
                     </table>
@@ -59,5 +156,4 @@
         </div>
         <div class="col-md-4"></div>
     </div>
-
-</div>
+*@

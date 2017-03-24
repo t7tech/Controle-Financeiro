@@ -14,6 +14,8 @@ using Microsoft.Owin.Security;
 using T7.ControleFinanceiro.Core.Validation;
 using T7.ControleFinanceiro.Core.Formatter;
 using T7.ControleFinanceiro.Core.Error;
+using System.Security.Claims;
+using T7.ControleFinanceiro.Core;
 
 namespace T7.ControleFinanceiro.Service.Account
 {
@@ -75,6 +77,9 @@ namespace T7.ControleFinanceiro.Service.Account
 
             // Send E-mail Confirm
             await _userManager.SendEmailAsync(user.Id, "Confirme sua Conta", EmailFormatter.GetEmailConfirm(code));
+
+            // Add UserClaim
+            await _userManager.AddClaimAsync(user.Id, new Claim(AppConfig.Get().DefaultClaimType, AppConfig.Get().DefaultClaimValue));
 
             // Login on System
             await _signInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);

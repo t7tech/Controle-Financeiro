@@ -36,7 +36,7 @@
                            ConfirmPassword: $scope.Model.ConfirmPassword,
                            Name: $scope.Model.Name,
                            LastName: $scope.Model.LastName,
-                           DateBirth: $scope.Model.DateBirth
+                           DateBirth: moment($scope.Model.DateBirth, 'DD/MM/YYYY').format('YYYY-MM-DD')
                        };
 
                        // Show Sending Element
@@ -44,14 +44,23 @@
 
                        // Send Data to Server
                        AccountRegisterFactory.Create(model)
-                                             .success(function (response) {
+                            .then(function (response) {
 
-                                             })
-                                             .error(function (response) {
+                                // Redirect to Main Page
+                                window.location = '/home';
 
-                                             });
+                            },
+                            function (response) {
+
+                                // Show Error
+                                $rootScope.OnError(response, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
+
+                            });
 
                    } catch (ex) {
+
+                       // Show Error
+                       $rootScope.OnError(null, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
 
                    }
                };

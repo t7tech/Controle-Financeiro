@@ -5,7 +5,7 @@
            .factory('AccountRegisterFactory', function ($http, APP_CONFIG, URL) {
 
                return {
-                   Create:Create
+                   Create: Create
                };
 
                // <summary>
