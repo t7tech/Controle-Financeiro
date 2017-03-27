@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using T7.ControleFinanceiro.Domain.Entities.Account;
-using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
 using T7.ControleFinanceiro.Core.Validation;
 using T7.ControleFinanceiro.Core.Formatter;
 using T7.ControleFinanceiro.Core.Error;
 using System.Security.Claims;
 using T7.ControleFinanceiro.Core;
+using T7.ControleFinanceiro.Core.Configuration;
 
 namespace T7.ControleFinanceiro.Service.Account
 {
@@ -50,7 +43,9 @@ namespace T7.ControleFinanceiro.Service.Account
         /// <param name="entity"></param>
         public async Task Add(RegisterEntity entity)
         {
-            /***** Validation *****/
+            /*
+             * Validation
+             */
             AssertionConcern.AssertArgumentNotNull(entity, "As informações inseridas são inválidas");
             AssertionConcern.AssertArgumentNotEmpty(entity.Email, "Informe seu e-mail");
             AssertionConcern.AssertArgumentNotEmpty(entity.Name, "Informe seu nome");
@@ -67,21 +62,31 @@ namespace T7.ControleFinanceiro.Service.Account
                 DateBirth = entity.DateBirth
             };
 
-            // Create Account
+            /*
+             * Create Account
+             */
             var result = await _userManager.CreateAsync(user, entity.Password);
             if (!result.Succeeded)
                 throw new CustomException("Não foi possível finalizar seu cadastro");
 
-            // Generate Confirm Code
+            /*
+             * Generate Confirm Code
+             */
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user.Id);
 
-            // Send E-mail Confirm
-            await _userManager.SendEmailAsync(user.Id, "Confirme sua Conta", EmailFormatter.GetEmailConfirm(code));
+            /*
+             * Send E-mail Confirm
+             */
+            await _userManager.SendEmailAsync(user.Id, "Confirme sua Conta", EmailFormatter.GetEmailAccountConfirm(user.Id, code));
 
-            // Add UserClaim
+            /*
+             * Add UserClaim
+             */
             await _userManager.AddClaimAsync(user.Id, new Claim(AppConfig.Get().DefaultClaimType, AppConfig.Get().DefaultClaimValue));
 
-            // Login on System
+            /*
+             * Login on System
+             */
             await _signInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
         }
@@ -94,11 +99,15 @@ namespace T7.ControleFinanceiro.Service.Account
         /// <returns></returns>
         public async Task ConfirmEmail(string userId, string code)
         {
-            /***** Validation *****/
+            /*
+             * Validation
+             */
             AssertionConcern.AssertArgumentNotNull(userId, "Não foi possível confirmar seu cadastro");
             AssertionConcern.AssertArgumentNotNull(code, "Não foi possível confirmar seu cadastro");
 
-            // Validate Account
+            /*
+             * Validate Account
+             */
             await _userManager.ConfirmEmailAsync(userId, code);
         }
 

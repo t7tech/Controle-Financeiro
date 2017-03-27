@@ -62,7 +62,7 @@ namespace T7.ControleFinanceiro.UI.Areas.Api.Controllers
         /// <param name="values"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IHttpActionResult> ConfirmEmail([FromBody]ConfirmEmailEntiry values)
+        public async Task<IHttpActionResult> Confirm([FromBody]ConfirmEmailEntity values)
         {
             try
             {

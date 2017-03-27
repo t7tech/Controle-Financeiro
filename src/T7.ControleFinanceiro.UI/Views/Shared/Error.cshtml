@@ -1,9 +1,50 @@
-﻿@model HandleErrorInfo
-
+﻿@model System.Web.Mvc.HandleErrorInfo
 @{
-    ViewBag.Title = "Error";
+    Layout = null;
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label class="col-md-1 control-label">
+                Mensagem
+            </label>
+            <div class="col-md-11">
+                @Model.Exception.Message
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label class="col-md-1 control-label">
+                StackTrace
+            </label>
+            <div class="col-md-11" style="float: left;max-height: 220px;overflow: auto;">
+                @Model.Exception.StackTrace
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label class="col-md-1 control-label">
+                Source
+            </label>
+            <div class="col-md-11">
+                @Model.Exception.Source
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label class="col-md-1 control-label">
+                HelpLink
+            </label>
+            <div class="col-md-11">
+                @Model.Exception.HelpLink
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <a class="btn btn-primary" style="display: table;margin: 0 auto;" href="javascript:void(0);" onclick="javascript:window.history.go(-1);">Ir para página anterior</a>
+    </div>
+</div>

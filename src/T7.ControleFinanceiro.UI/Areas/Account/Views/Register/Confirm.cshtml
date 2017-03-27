@@ -1,0 +1,25 @@
+﻿@model T7.ControleFinanceiro.Domain.Entities.Account.ConfirmEmailEntity
+
+@{
+    Layout = "~/Views/Shared/_ExternalLayout.cshtml";
+}
+
+@section scripts{
+    @Html.AngularJSModel(Model)
+    <script src="~/app/data/account/register.factory.js"></script>
+    <script src="~/app/components/account/confirm.controller.js"></script>
+}
+<div ng-controller="AccountConfirmEmailController">
+    <table>
+        <tbody>
+            <tr>
+                <td>UserId</td>
+                <td ng-bind="Model.UserId"></td>
+            </tr>
+            <tr>
+                <td>Code</td>
+                <td ng-bind="Model.Code"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

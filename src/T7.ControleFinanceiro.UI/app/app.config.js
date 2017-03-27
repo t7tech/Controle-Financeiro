@@ -12,7 +12,8 @@
                EMAIL: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
            })
            .constant('URL', {
-               ACCOUNT_REGISTER_CREATE: '/api/account/create'
+               ACCOUNT_REGISTER_CREATE: '/api/account/create',
+               ACCOUNT_REGISTER_CONFIRM: '/api/account/confirm'
            })
            .run(function ($rootScope, $location, APP_CONFIG) {
 
@@ -20,7 +21,7 @@
                    console.log(args);
                };
 
-               $rootScope.OnError = function (response, defaultMessage) {
+               $rootScope.OnError = function (response, typeMessage, defaultMessage) {
 
                    if (response) {
                        switch (response.status) {

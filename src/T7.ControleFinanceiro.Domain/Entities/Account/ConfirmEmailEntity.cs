@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace T7.ControleFinanceiro.Domain.Entities.Account
 {
-    public class ConfirmEmailEntiry
+    public class ConfirmEmailEntity
     {
         public string UserId { get; set; }
 

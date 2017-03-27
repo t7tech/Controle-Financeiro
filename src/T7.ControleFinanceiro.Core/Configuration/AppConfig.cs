@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
+using T7.ControleFinanceiro.Core.Configuration;
 
-namespace T7.ControleFinanceiro.Core
+namespace T7.ControleFinanceiro.Core.Configuration
 {
     public class AppConfig : ConfigurationSection
     {
@@ -28,6 +29,24 @@ namespace T7.ControleFinanceiro.Core
             get
             {
                 return this["DefaultClaimValue"].ToString();
+            }
+        }
+
+        [ConfigurationProperty("Server")]
+        public string Server
+        {
+            get
+            {
+                return this["Server"].ToString();
+            }
+        }
+
+        [ConfigurationProperty("identityEmail")]
+        public IdentityConfigElement IdentityEmail
+        {
+            get
+            {
+                return (IdentityConfigElement)this["identityEmail"];
             }
         }
     }

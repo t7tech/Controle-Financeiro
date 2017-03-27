@@ -53,14 +53,14 @@
                             function (response) {
 
                                 // Show Error
-                                $rootScope.OnError(response, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
+                                $rootScope.OnError(response, 1, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
 
                             });
 
                    } catch (ex) {
 
                        // Show Error
-                       $rootScope.OnError(null, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
+                       $rootScope.OnError(null, 1, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
 
                    }
                };

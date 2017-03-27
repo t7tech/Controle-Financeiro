@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace T7.ControleFinanceiro.Core.Formatter
 {
     public static class EmailFormatter
     {
-        public static string GetEmailConfirm(string code)
+        public static string GetEmailAccountConfirm(string userId, string code)
         {
-            var content = new StringBuilder();
-
-            content.AppendFormat("Por favor confirme sua conta clicando neste link: <a href='http://www.site.com.br/account/confirm/?c={0}'></a>", code);
-
-            return content.ToString();
+            return new StringBuilder()
+                    .AppendFormat("Por favor confirme sua conta clicando neste link: <a href='http://localhost:18255/account/register/confirm/?u={0}&c={1}'>Confirmar</a>", userId, code)
+                    .ToString();
         }
     }
 }
