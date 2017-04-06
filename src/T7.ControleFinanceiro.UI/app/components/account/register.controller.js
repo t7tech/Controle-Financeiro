@@ -18,7 +18,11 @@
                    Email: Regex.EMAIL
                };
 
-               $scope.Sending = false;
+               $scope.Status = {
+                   Sending: false
+               };
+
+               $rootScope.message.loading = 'Aguarde...';
 
                // <summary>
                // 
@@ -40,7 +44,8 @@
                        };
 
                        // Show Sending Element
-                       $scope.Sending = true;
+                       $scope.Status.Sending = true;
+                       $rootScope.status.loading = true;
 
                        // Send Data to Server
                        AccountRegisterFactory.Create(model)
@@ -54,6 +59,7 @@
 
                                 // Show Error
                                 $rootScope.OnError(response, 1, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
+                                $rootScope.status.loading = false;
 
                             });
 
@@ -61,6 +67,7 @@
 
                        // Show Error
                        $rootScope.OnError(null, 1, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
+                       $rootScope.status.loading = false;
 
                    }
                };

@@ -17,6 +17,14 @@
            })
            .run(function ($rootScope, $location, APP_CONFIG) {
 
+               $rootScope.status = {
+                   loading: false
+               };
+
+               $rootScope.message = {
+                   loading: 'Loading...'
+               };
+
                $rootScope.OnLog = function (args) {
                    console.log(args);
                };

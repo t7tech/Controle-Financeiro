@@ -164,10 +164,10 @@
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
-    <Compile Include="Areas\Account\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Account\Controllers\LogoffController.cs" />
-    <Compile Include="Areas\Account\Controllers\RegisterController.cs" />
+    <Compile Include="Areas\OAuth\OAuthAreaRegistration.cs" />
+    <Compile Include="Areas\OAuth\Controllers\LoginController.cs" />
+    <Compile Include="Areas\OAuth\Controllers\LogoffController.cs" />
+    <Compile Include="Areas\OAuth\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
     <Compile Include="Areas\Api\Controllers\AccountController.cs" />
     <Compile Include="Controllers\Account2Controller.cs" />
@@ -734,10 +734,10 @@
     <Content Include="Global.asax" />
     <Content Include="assets\libs\bootstrap\bootstrap.js" />
     <Content Include="assets\libs\bootstrap\bootstrap.min.js" />
-    <Content Include="Areas\Account\Views\Login\Index.cshtml" />
-    <Content Include="Areas\Account\Views\Web.config" />
+    <Content Include="Areas\OAuth\Views\Login\Index.cshtml" />
+    <Content Include="Areas\OAuth\Views\Web.config" />
     <Content Include="Areas\Api\Views\Web.config" />
-    <Content Include="Areas\Account\Views\Register\Index.cshtml" />
+    <Content Include="Areas\OAuth\Views\Register\Index.cshtml" />
     <Content Include="assets\css\bootstrap\bootstrap-datepicker.css.map" />
     <Content Include="assets\css\bootstrap\bootstrap-datepicker.min.css.map" />
     <Content Include="assets\css\bootstrap\bootstrap-datepicker.standalone.css.map" />
@@ -751,7 +751,7 @@
     <Content Include="assets\fonts\fontawesome-webfont.woff" />
     <Content Include="assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="assets\fonts\FontAwesome.otf" />
-    <Content Include="Areas\Account\Views\Register\Confirm.cshtml" />
+    <Content Include="Areas\OAuth\Views\Register\Confirm.cshtml" />
     <None Include="assets\libs\jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="assets\libs\jquery\jquery-1.10.2.js" />
     <Content Include="assets\libs\jquery\jquery-1.10.2.min.js" />
@@ -1589,9 +1589,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\service\" />
-    <Folder Include="Areas\Account\Models\" />
-    <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Api\Views\Shared\" />
+    <Folder Include="Areas\OAuth\Models\" />
+    <Folder Include="Areas\OAuth\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />

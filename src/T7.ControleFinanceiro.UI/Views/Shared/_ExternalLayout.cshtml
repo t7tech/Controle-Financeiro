@@ -6,7 +6,7 @@
     @*
     <link href="~/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="~/assets/css/bootstrap/bootstrap-datepicker.min.css" rel="stylesheet" />
-
+    *@
     <link href="~/assets/css/flat-ui/vendor.css" rel="stylesheet" />
     <link href="~/assets/css/flat-ui/flat-admin.css" rel="stylesheet" />
     <link href="~/assets/css/flat-ui/theme/blue-sky.css" rel="stylesheet" />
@@ -14,14 +14,14 @@
     <link href="~/assets/css/flat-ui/theme/default.css" rel="stylesheet" />
     <link href="~/assets/css/flat-ui/theme/red.css" rel="stylesheet" />
     <link href="~/assets/css/flat-ui/theme/yellow.css" rel="stylesheet" />
-    *@
+
     <link href="~/assets/css/general.css" rel="stylesheet" />
     @RenderSection("styles", required: false)
     <script src="~/assets/libs/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
-    @*
+
     <script src="~/assets/libs/bootstrap/bootstrap-datepicker.min.js"></script>
     <script src="~/assets/libs/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-    *@
+
     <script src="~/assets/libs/flat-ui/vendor.js"></script>
     <script src="~/assets/libs/flat-ui/app.js"></script>
     <script src="~/assets/libs/momentjs/moment.min.js"></script>
@@ -55,8 +55,7 @@
     </div>
 
     <div class="app app-default">
-
-        <div class="app-container app-login">
+        <div class="app-container app-login" ng-class="{__loading: status.loading}">
             <div class="flex-center">
                 <div class="app-header"></div>
                 <div class="app-body">
@@ -69,7 +68,7 @@
                                 <div class="sk-cube3 sk-cube"></div>
                             </div>
                         </div>
-                        <div class="title">Logging in...</div>
+                        <div class="title" ng-bind="message.loading"></div>
                     </div>
                     <div class="app-block">
                         @RenderBody()

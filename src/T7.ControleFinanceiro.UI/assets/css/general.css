@@ -7,3 +7,7 @@
 .form-alert-validation:empty {
     visibility: hidden;
 }
+
+.message-error:empty {
+    visibility: hidden;
+}

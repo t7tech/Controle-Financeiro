@@ -1,0 +1,29 @@
+﻿@model T7.ControleFinanceiro.Domain.Entities.Account.ConfirmEmailEntity
+
+@{
+    Layout = "~/Views/Shared/_ExternalLayout.cshtml";
+}
+
+@section scripts{
+    @Html.AngularJSModel(Model)
+    <script src="~/app/data/account/register.factory.js"></script>
+    <script src="~/app/components/account/confirm.controller.js"></script>
+}
+<div ng-controller="AccountConfirmEmailController">
+    <div ng-show="IsRequested">
+        <div class="alert alert-success alert-dismissible fade in" role="alert" ng-show="IsSuccess">
+            <h4>Parabéns!</h4>
+            <p>Seu e-mail foi confirmado com sucesso.</p>
+            <p class="text-center">
+                <button type="button" class="btn btn-sm btn-success">Página Inicial</button>
+            </p>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade in" role="alert" ng-show="!IsSuccess">
+            <h4>Desculpe!</h4>
+            <p>Não foi possível confirmar seu e-mail. Tente novamente.</p>
+            <p class="text-center">
+                <button type="button" class="btn btn-danger" onclick="/home">Página Inicial</button>
+            </p>
+        </div>
+    </div>
+</div>

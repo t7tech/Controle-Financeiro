@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using T7.ControleFinanceiro.Core.Web;
 
-namespace T7.ControleFinanceiro.UI.Areas.Account.Controllers
+namespace T7.ControleFinanceiro.UI.Areas.OAuth.Controllers
 {
     public class LoginController : BaseController
     {

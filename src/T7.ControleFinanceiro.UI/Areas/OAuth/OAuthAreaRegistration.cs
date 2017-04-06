@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace T7.ControleFinanceiro.UI.Areas.Account
+namespace T7.ControleFinanceiro.UI.Areas.OAuth
 {
-    public class AccountAreaRegistration : AreaRegistration
+    public class OAuthAreaRegistration : AreaRegistration
     {
         public override string AreaName
         {
             get
             {
-                return "Account";
+                return "OAuth";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Account_default",
-                "Account/{controller}/{action}/{id}",
+                "OAuth_default",
+                "OAuth/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

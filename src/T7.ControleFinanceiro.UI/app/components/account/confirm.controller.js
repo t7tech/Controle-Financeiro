@@ -13,6 +13,8 @@
                };
 
                $scope.Sending = false;
+               $scope.IsRequested = false;
+               $scope.IsSuccess = false;
 
                // <summary>
                // 
@@ -32,17 +34,15 @@
                             .then(function (response) {
 
                                 $scope.Sending = false;
-
+                                $scope.IsSuccess = true;
+                                $scope.IsRequested = true;
 
                             },
                             function (response) {
 
                                 $scope.Sending = false;
-
-                                /*
-                                 * Show Error
-                                 */
-                                $rootScope.OnError(response, 2, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
+                                $scope.IsSuccess = false;
+                                $scope.IsRequested = true;
 
                             });
 
@@ -51,7 +51,9 @@
                        /*
                         * Show Error
                         */
-                       $rootScope.OnError(null, 2, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
+                       $rootScope.OnError(null, 2);
+                       $scope.IsSuccess = false;
+                       $scope.IsRequested = false;
 
                    }
                };

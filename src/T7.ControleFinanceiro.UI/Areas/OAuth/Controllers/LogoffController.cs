@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using Microsoft.Owin.Security;
 
-namespace T7.ControleFinanceiro.UI.Areas.Account.Controllers
+namespace T7.ControleFinanceiro.UI.Areas.OAuth.Controllers
 {
     public class LogoffController : Controller
     {
