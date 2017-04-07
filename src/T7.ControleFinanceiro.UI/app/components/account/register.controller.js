@@ -15,7 +15,8 @@
                };
 
                $scope.Regex = {
-                   Email: Regex.EMAIL
+                   Email: Regex.EMAIL,
+                   DateBirth: Regex.DATE['ptBR']
                };
 
                $scope.Status = {

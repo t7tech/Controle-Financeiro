@@ -1,8 +1,8 @@
-﻿using System;
-using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security.DataProtection;
+using System;
+using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 
 namespace T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration
 {
@@ -51,8 +51,8 @@ namespace T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration
             // Definindo a classe de serviço de SMS
             SmsService = new SmsService();
 
-            var provider = new DpapiDataProtectionProvider("Eduardo");
-            var dataProtector = provider.Create("ASP.NET Identity");
+            var provider = new DpapiDataProtectionProvider("Julio");
+            var dataProtector = provider.Create("ConFin");
 
             UserTokenProvider = new DataProtectorTokenProvider<ApplicationUser>(dataProtector);
 

@@ -27,7 +27,7 @@ namespace T7.ControleFinanceiro.UI
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/account/login"),
+                LoginPath = new PathString("/oauth/login"),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.

@@ -189,6 +189,7 @@
     <Content Include="app\components\account\register.controller.js" />
     <Content Include="app\data\account\register.factory.js" />
     <Content Include="app\shared\directives\compare-to.directive.js" />
+    <Content Include="app\shared\directives\user-unique.directive.js" />
     <Content Include="App_Data\IdentityIsolation.mdf" />
     <Content Include="App_Data\IdentityIsolation_log.ldf">
       <DependentUpon>IdentityIsolation.mdf</DependentUpon>

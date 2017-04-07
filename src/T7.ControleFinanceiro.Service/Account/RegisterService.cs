@@ -1,14 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System.Security.Claims;
+using System.Threading.Tasks;
+using T7.ControleFinanceiro.Core.Configuration;
+using T7.ControleFinanceiro.Core.Error;
+using T7.ControleFinanceiro.Core.Formatter;
+using T7.ControleFinanceiro.Core.Validation;
 using T7.ControleFinanceiro.Domain.Entities.Account;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
-using T7.ControleFinanceiro.Core.Validation;
-using T7.ControleFinanceiro.Core.Formatter;
-using T7.ControleFinanceiro.Core.Error;
-using System.Security.Claims;
-using T7.ControleFinanceiro.Core;
-using T7.ControleFinanceiro.Core.Configuration;
 
 namespace T7.ControleFinanceiro.Service.Account
 {
@@ -109,6 +108,25 @@ namespace T7.ControleFinanceiro.Service.Account
              * Validate Account
              */
             await _userManager.ConfirmEmailAsync(userId, code);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public async Task<bool> CheckEmail(string email)
+        {
+            /*
+             * Validation
+             */
+            AssertionConcern.AssertArgumentNotNull(email, "Não foi possível validar o e-mail");
+
+            /*
+             * Check E-mail
+             */
+            var result = await _userManager.FindByNameAsync(email);
+            return result == null;
         }
 
         #endregion

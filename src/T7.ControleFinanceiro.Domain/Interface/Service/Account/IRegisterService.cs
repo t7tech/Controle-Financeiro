@@ -7,5 +7,6 @@ namespace T7.ControleFinanceiro.Domain.Interface.Service.Account
     {
         Task Add(RegisterEntity entity);
         Task ConfirmEmail(string userId, string code);
+        Task<bool> CheckEmail(string email);
     }
 }
