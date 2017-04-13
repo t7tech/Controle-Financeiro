@@ -1,13 +1,13 @@
-﻿using System;
-using System.Web.Mvc;
-using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
-using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Owin;
+using System;
+using System.Web.Mvc;
+using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
+using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 
 namespace T7.ControleFinanceiro.UI
 {

@@ -8,6 +8,11 @@
     visibility: hidden;
 }
 
-.message-error:empty {
-    visibility: hidden;
+.message-error {
+    float: left;
+}
+
+.message-error small {
+    float: left;
+    /*width: 100%;*/
 }

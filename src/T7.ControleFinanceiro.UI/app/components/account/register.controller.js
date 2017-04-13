@@ -25,6 +25,11 @@
 
                $rootScope.message.loading = 'Aguarde...';
 
+               $scope.$watch('Model.Email',
+                               function (newVal, oldVal) {
+                                   $scope.count++;
+                               }, true);
+
                // <summary>
                // 
                // </summary>
