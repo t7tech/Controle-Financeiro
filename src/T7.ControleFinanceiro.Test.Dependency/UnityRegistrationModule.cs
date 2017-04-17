@@ -1,19 +1,18 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
-using System;
-using System.Linq;
-using System.Data.Entity;
+using System.Web;
 using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
+using T7.ControleFinanceiro.Domain.Interface.Service.OAuth;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Context;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 using T7.ControleFinanceiro.Infra.Data.Repository.Account;
 using T7.ControleFinanceiro.Service.Account;
+using T7.ControleFinanceiro.Service.OAuth;
 using T7.ControleFinanceiro.Test.Commom;
-using Microsoft.Owin.Security;
-using System.Web;
 
 namespace T7.ControleFinanceiro.Test.Dependency
 {
@@ -42,6 +41,7 @@ namespace T7.ControleFinanceiro.Test.Dependency
             container.RegisterType<IClaimService, ClaimService>();
             container.RegisterType<IUserClaimsService, UserClaimsService>();
             container.RegisterType<IRegisterService, RegisterService>();
+            container.RegisterType<ILoginService, LoginService>();
 
             // register repository
             container.RegisterType<IRoleRepository, RoleRepository>();

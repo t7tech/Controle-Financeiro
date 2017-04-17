@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Collections.Generic;
 
-namespace T7.ControleFinanceiro.Test.Account
+namespace T7.ControleFinanceiro.Test.OAuth
 {
     [TestClass]
     public class RegisterTest : TestBase
@@ -16,9 +16,7 @@ namespace T7.ControleFinanceiro.Test.Account
         public async void TestAdd()
         {
             var client = new HttpClient(); // no HttpServer
-            var url = "http://localhost:18255/api/register/add";
-
-            //var param = "Email=teste@teste.com&Password=Teste@17&ConfirmPassword=Teste@17&Name=Julio&LastName=Cesar&DateBirth=01/01/1987";
+            var url = "http://localhost:18255/api/account/create";
 
             using (var httpClient = new HttpClient())
             {

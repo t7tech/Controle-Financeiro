@@ -3,11 +3,13 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using SimpleInjector;
 using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
+using T7.ControleFinanceiro.Domain.Interface.Service.OAuth;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Context;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 using T7.ControleFinanceiro.Infra.Data.Repository.Account;
 using T7.ControleFinanceiro.Service.Account;
+using T7.ControleFinanceiro.Service.OAuth;
 
 namespace T7.ControleFinanceiro.Infra.CrossCutting.IoC
 {
@@ -32,6 +34,7 @@ namespace T7.ControleFinanceiro.Infra.CrossCutting.IoC
             container.RegisterPerWebRequest<IRoleService, RoleService>();
             container.RegisterPerWebRequest<IUserRolesService, UserRolesService>();
             container.RegisterPerWebRequest<IRegisterService, RegisterService>();
+            container.RegisterPerWebRequest<ILoginService, LoginService>();
 
             #endregion
 

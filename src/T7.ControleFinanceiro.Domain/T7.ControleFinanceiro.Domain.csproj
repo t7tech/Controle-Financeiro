@@ -41,6 +41,8 @@
     <Compile Include="Entities\Account\UserClaimsEntity.cs" />
     <Compile Include="Entities\Account\UserEntity.cs" />
     <Compile Include="Entities\Account\UserRolesEntity.cs" />
+    <Compile Include="Entities\OAuth\LoginEntity.cs" />
+    <Compile Include="Entities\OAuth\LoginStatus.cs" />
     <Compile Include="Interface\Repository\Account\IClaimRepository.cs" />
     <Compile Include="Interface\Repository\Account\IRoleRepository.cs" />
     <Compile Include="Interface\Repository\Account\IUserClaimsRepository.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="Interface\Service\Account\IUserClaimsService.cs" />
     <Compile Include="Interface\Service\Account\IUserRolesService.cs" />
     <Compile Include="Interface\Service\Account\IUserService.cs" />
+    <Compile Include="Interface\Service\OAuth\ILoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

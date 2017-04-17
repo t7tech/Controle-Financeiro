@@ -84,12 +84,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Account\RoleTest.cs" />
-    <Compile Include="Account\ClaimsTest.cs" />
-    <Compile Include="Account\RegisterTest.cs" />
-    <Compile Include="Account\UserClaimsTest.cs" />
-    <Compile Include="Account\UserRoleTest.cs" />
-    <Compile Include="Account\UserTest.cs" />
+    <Compile Include="OAuth\LoginTest.cs" />
+    <Compile Include="OAuth\RoleTest.cs" />
+    <Compile Include="OAuth\ClaimsTest.cs" />
+    <Compile Include="OAuth\RegisterTest.cs" />
+    <Compile Include="OAuth\UserClaimsTest.cs" />
+    <Compile Include="OAuth\UserRoleTest.cs" />
+    <Compile Include="OAuth\UserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>

@@ -17,7 +17,8 @@
            .constant('URL', {
                ACCOUNT_REGISTER_CREATE: '/api/account/create',
                ACCOUNT_REGISTER_CONFIRM: '/api/account/confirm',
-               ACCOUNT_CHECK_EMAIL_UNIQUE: '/api/account/uniqueemail'
+               ACCOUNT_CHECK_EMAIL_UNIQUE: '/api/account/uniqueemail',
+               OAUTH_VALIDATE_LOGIN: '/api/oauth/login'
            })
            .run(function ($rootScope, $location, APP_CONFIG) {
 

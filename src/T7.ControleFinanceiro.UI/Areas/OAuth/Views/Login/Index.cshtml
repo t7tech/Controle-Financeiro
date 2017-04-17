@@ -3,39 +3,41 @@
 }
 
 @section scripts{
-
+    <script src="~/app/data/oauth/login.factory.js"></script>
+    <script src="~/app/components/oauth/login.controller.js"></script>
 }
-
-<div class="app-form">
-    <div class="form-header">
-        <div class="app-brand"><span class="highlight">Simplio</span> Admin</div>
-    </div>
-    <form ng-submit="OnSubmit()" class="ng-pristine ng-valid">
-        <div class="input-group">
-            <span class="input-group-addon">
-                <i class="fa fa-user" aria-hidden="true"></i></span>
-            <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Username" ng-model="vm.username">
+<div ng-controller="OAuthLoginController">
+    <div class="app-form">
+        <div class="form-header">
+            <div class="app-brand"><span class="highlight">Simplio</span> Admin</div>
         </div>
-        <div class="input-group">
-            <span class="input-group-addon">
-                <i class="fa fa-key" aria-hidden="true"></i></span>
-            <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Password" ng-model="vm.password">
-        </div>
-        <div class="text-center">
-            <input type="submit" class="btn btn-success btn-submit" value="Login">
-        </div>
-    </form>
-
-    <div class="form-line">
-        <div class="title">OR</div>
-    </div>
-
-    <div class="form-footer">
-        <button type="button" class="btn btn-default btn-sm btn-social __facebook">
-            <div class="info">
-                <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
-                <span class="title">Login with Facebook</span>
+        <form ng-submit="OnSubmit()" class="ng-pristine ng-valid">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-user" aria-hidden="true"></i></span>
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Username" ng-model="Model.Email">
             </div>
-        </button>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-key" aria-hidden="true"></i></span>
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Password" ng-model="Model.Password">
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-success btn-submit" value="Login">
+            </div>
+        </form>
+
+        <div class="form-line">
+            <div class="title">OR</div>
+        </div>
+
+        <div class="form-footer">
+            <button type="button" class="btn btn-default btn-sm btn-social __facebook">
+                <div class="info">
+                    <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
+                    <span class="title">Login with Facebook</span>
+                </div>
+            </button>
+        </div>
     </div>
 </div>

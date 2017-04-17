@@ -81,6 +81,7 @@
     <Compile Include="Account\UserClaimsService.cs" />
     <Compile Include="Account\UserService.cs" />
     <Compile Include="Account\UserRolesService.cs" />
+    <Compile Include="OAuth\LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

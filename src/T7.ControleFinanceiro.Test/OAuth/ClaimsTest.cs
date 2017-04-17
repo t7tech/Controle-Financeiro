@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using T7.ControleFinanceiro.Domain.Entities.Account;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 
-namespace T7.ControleFinanceiro.Test.Account
+namespace T7.ControleFinanceiro.Test.OAuth
 {
     [TestClass]
     public class ClaimsTest : TestBase

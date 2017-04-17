@@ -48,10 +48,8 @@
                 </span>
                 <input type="text" id="txtName" name="txtName" class="form-control" placeholder="Nome" aria-describedby="basic-addon1" ng-minlength="3" ng-maxlength="50" maxlength="50" placeholder="Nome" ng-model="Model.Name" required />
             </div>
-            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtName.$dirty && formCreateAccount.txtName.$invalid" style="margin-top:-20px;">
-                <small class="error" ng-if="formCreateAccount.txtName.$error.required">Este campo é obrigatório</small>
-                <small class="error" ng-if="formCreateAccount.txtName.$error.minlength">Este campo deve ter entre 3 e 50 caracteres</small>
-                <small class="error" ng-if="formCreateAccount.txtName.$error.maxlength">Este campo deve ter entre 3 e 50 caracteres</small>
+            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtName.$dirty && formCreateAccount.txtName.$invalid">
+                <small class="error" ng-bind="GetMessageNameValidation()"></small>
             </div>
 
             <div class="input-group">
@@ -60,10 +58,8 @@
                 </span>
                 <input type="text" id="txtLastName" name="txtLastName" class="form-control" placeholder="Sobrenome" aria-describedby="basic-addon1" ng-minlength="3" ng-maxlength="50" maxlength="50" placeholder="Sobrenome" ng-model="Model.LastName" required />
             </div>
-            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtLastName.$dirty && formCreateAccount.txtLastName.$invalid" style="margin-top:-20px;">
-                <small class="error" ng-if="formCreateAccount.txtLastName.$error.required">Este campo é obrigatório</small>
-                <small class="error" ng-if="formCreateAccount.txtLastName.$error.minlength">Este campo deve ter entre 3 e 50 caracteres</small>
-                <small class="error" ng-if="formCreateAccount.txtLastName.$error.maxlength">Este campo deve ter entre 3 e 50 caracteres</small>
+            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtLastName.$dirty && formCreateAccount.txtLastName.$invalid">
+                <small class="error" ng-bind="GetMessageLastNameValidation()"></small>
             </div>
 
             <div class="input-group">
@@ -72,12 +68,8 @@
                 </span>
                 <input type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="E-mail" user-unique="txtEmail" ng-trim="false" aria-describedby="basic-addon2" ng-minlength="5" ng-maxlength="50" maxlength="50" ng-model="Model.Email" ng-pattern="Regex.Email" required />
             </div>
-            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtEmail.$dirty && formCreateAccount.txtEmail.$invalid" style="margin-top:-20px;">
-                <small class="error" ng-if="formCreateAccount.txtEmail.$error.pattern">Informe um e-mail válido</small>
-                <small class="error" ng-if="formCreateAccount.txtEmail.$error.required">Este campo é obrigatório</small>
-                <small class="error" ng-if="formCreateAccount.txtEmail.$error.minlength">Este campo deve ter entre 5 e 50 caracteres</small>
-                <small class="error" ng-if="formCreateAccount.txtEmail.$error.maxlength">Este campo deve ter entre 5 e 50 caracteres</small>
-                <small class="error" ng-if="formCreateAccount.txtEmail.$error.unique">Usuário já está sendo utilizado</small>
+            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtEmail.$dirty && formCreateAccount.txtEmail.$invalid">
+                <small ng-bind="GetMessageEmailValidation()"></small>
             </div>
 
             <div class="input-group">
@@ -86,19 +78,18 @@
                 </span>
                 <input type="text" id="txtDateBirth" name="txtDateBirth" class="form-control" placeholder="Data de Nascimento" ng-trim="false" ng-pattern="Regex.DateBirth" ng-model="Model.DateBirth" aria-describedby="basic-addon2" required>
             </div>
-            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtDateBirth.$dirty && formCreateAccount.txtDateBirth.$invalid" style="margin-top:-20px;">
-                <small class="error" ng-if="formCreateAccount.txtDateBirth.$error.required">Este campo é obrigatório</small>
-                <small class="error" ng-if="formCreateAccount.txtDateBirth.$error.pattern">Informe uma data válida</small>
+            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtDateBirth.$dirty && formCreateAccount.txtDateBirth.$invalid">
+                <small class="error" ng-bind="GetMessageDateBirthValidation()">Este campo é obrigatório</small>
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon3">
                     <i class="fa fa-key" aria-hidden="true"></i>
                 </span>
-                <input type="text" id="txtPassword" name="txtPassword" class="form-control" placeholder="Senha" aria-describedby="basic-addon3" maxlength="50" placeholder="Senha" ng-model="Model.Password" required />
+                <input type="text" id="txtPassword" name="txtPassword" class="form-control" placeholder="Senha" aria-describedby="basic-addon3" ng-minlength="8" maxlength="50" placeholder="Senha" ng-model="Model.Password" required />
             </div>
-            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtPassword.$dirty && formCreateAccount.txtPassword.$invalid" style="margin-top:-20px;">
-                <small class="error" ng-if="formCreateAccount.txtPassword.$error.required">Este campo é obrigatório</small>
+            <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtPassword.$dirty && formCreateAccount.txtPassword.$invalid">
+                <small class="error" ng-bind="GetMessagePasswordValidation()"></small>
             </div>
 
             <div class="input-group">
@@ -107,8 +98,8 @@
                 </span>
                 <input type="text" id="txtConfirmPassword" name="txtConfirmPassword" class="form-control" placeholder="Confirmar Senha" aria-describedby="basic-addon4" maxlength="50" placeholder="Confirmar Senha" compare-to="Model.Password" ng-model="Model.ConfirmPassword" required />
             </div>
-            <div class="input-group list-group-item list-group-item-danger small message-error" ng-show="formCreateAccount.txtConfirmPassword.$dirty && formCreateAccount.txtConfirmPassword.$invalid" style="margin-top:-20px;">
-                <small class="text-danger" ng-if="formCreateAccount.txtConfirmPassword.$error.compare">As senhas não conferem</small>
+            <div class="input-group list-group-item list-group-item-danger small message-error" ng-show="formCreateAccount.txtConfirmPassword.$dirty && formCreateAccount.txtConfirmPassword.$invalid">
+                <small class="text-danger" ng-bind="GetMessageConfirmPasswordValidation()"></small>
             </div>
 
             <div class="text-center">
