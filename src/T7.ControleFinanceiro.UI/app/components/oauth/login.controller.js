@@ -49,10 +49,20 @@
                        OAuthLoginFactory.Validate(model)
                             .then(function (response) {
 
-                                switch (parseInt(response.status)) {
+                                switch (parseInt(response.data.status)) {
                                     case 0:
-                                        // Redirect to Main Page
-                                        window.location = '/home';
+
+                                        /*
+                                         * Check if has Redirect Page
+                                         */
+                                        var redirect = decodeURIComponent(window.location.search).toLowerCase();
+                                        if (redirect)
+                                            // Redirect to Page
+                                            window.location = redirect.replace('?returnurl=', '');
+                                        else
+                                            // Redirect to Main Page
+                                            window.location = '/home';
+
                                         break;
                                     case 1:
                                         // Redirect to Lockout Page
@@ -70,7 +80,7 @@
                             function (response) {
 
                                 // Show Error
-                                $rootScope.OnError(response, 1, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
+                                $rootScope.OnError(response.data, 1, 'Desculpe, não foi possível finalizar seu cadastro. Tente novamente.');
                                 $rootScope.status.loading = false;
 
                             });

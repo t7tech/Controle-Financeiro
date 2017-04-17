@@ -6,11 +6,11 @@ namespace T7.ControleFinanceiro.UI.Areas.OAuth.Controllers
 {
     public class LogoffController : Controller
     {
-        [HttpGet]
-        public ActionResult LogOff()
+        [HttpPost]
+        public ActionResult Index()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("index", "home");
+            return Redirect("/home");
         }
 
         #region Helpers

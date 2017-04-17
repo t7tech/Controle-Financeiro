@@ -43,12 +43,10 @@ namespace T7.ControleFinanceiro.Service.OAuth
             AssertionConcern.AssertArgumentNotEmpty(entity.Email, "Login ou Senha incorretos.");
             AssertionConcern.AssertArgumentNotEmpty(entity.Password, "Login ou Senha incorretos.");
 
-            ///*
-            // * Validate Login
-            // */
-            //return (LoginStatus)await _signInManager.PasswordSignInAsync(entity.Email, entity.Password, entity.RememberMe, shouldLockout: true);
-
-            return LoginStatus.Success;
+            /*
+             * Validate Login
+             */
+            return (LoginStatus)await _signInManager.PasswordSignInAsync(entity.Email, entity.Password, entity.RememberMe, shouldLockout: true);
         }
     }
 }

@@ -3,6 +3,7 @@ using T7.ControleFinanceiro.Core.Configuration;
 
 namespace T7.ControleFinanceiro.UI.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
