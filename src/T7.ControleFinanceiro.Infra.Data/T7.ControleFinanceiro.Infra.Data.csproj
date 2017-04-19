@@ -69,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Account\ClaimRepository.cs" />
     <Compile Include="Repository\Account\RoleRepository.cs" />
+    <Compile Include="Repository\Account\Settings\ProfileRepository.cs" />
     <Compile Include="Repository\Account\UserClaimsRepository.cs" />
     <Compile Include="Repository\Account\UserRolesRepository.cs" />
     <Compile Include="Repository\Account\UserRepository.cs" />

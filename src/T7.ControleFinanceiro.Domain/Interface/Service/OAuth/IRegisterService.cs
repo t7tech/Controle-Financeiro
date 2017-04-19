@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using T7.ControleFinanceiro.Domain.Entities.Account;
+using T7.ControleFinanceiro.Domain.Entities.OAuth;
 
-namespace T7.ControleFinanceiro.Domain.Interface.Service.Account
+namespace T7.ControleFinanceiro.Domain.Interface.Service.OAuth
 {
     public interface IRegisterService
     {

@@ -3,8 +3,8 @@
 }
 
 @section scripts{
-    <script src="~/app/data/account/register.factory.js"></script>
-    <script src="~/app/components/account/register.controller.js"></script>
+    <script src="~/app/data/oauth/register.factory.js"></script>
+    <script src="~/app/components/oauth/register.controller.js"></script>
 }
 
 <div class="app-right-section">
@@ -69,7 +69,7 @@
                 <input type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="E-mail" user-unique="txtEmail" ng-trim="false" aria-describedby="basic-addon2" ng-minlength="5" ng-maxlength="50" maxlength="50" ng-model="Model.Email" ng-pattern="Regex.Email" required />
             </div>
             <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formCreateAccount.txtEmail.$dirty && formCreateAccount.txtEmail.$invalid">
-                <small ng-bind="GetMessageEmailValidation()"></small>
+                <small class="error" ng-bind="GetMessageEmailValidation()"></small>
             </div>
 
             <div class="input-group">
@@ -105,7 +105,6 @@
             <div class="text-center">
                 <input type="submit" class="btn btn-success btn-submit" value="CRIAR CONTA" ng-disabled="formCreateAccount.$invalid">
             </div>
-
         </form>
     </div>
     <div class="form-line">

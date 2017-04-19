@@ -143,7 +143,7 @@
                            return 'Este campo deve ter entre 5 e 50 caracteres';
 
                        if ($scope.formCreateAccount.txtEmail.$error.unique)
-                           return 'Usuário já está sendo utilizado';
+                           return 'O e-mail informado está sendo utilizado';
 
                    } catch (ex) {
 

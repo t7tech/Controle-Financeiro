@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using T7.ControleFinanceiro.Core.Validation;
 using T7.ControleFinanceiro.Domain.Entities.Account;
-using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
+using T7.ControleFinanceiro.Domain.Interface.Repository.OAuth;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 
 namespace T7.ControleFinanceiro.Service.Account

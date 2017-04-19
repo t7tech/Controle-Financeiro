@@ -15,10 +15,11 @@
                }
            })
            .constant('URL', {
-               ACCOUNT_REGISTER_CREATE: '/api/account/create',
-               ACCOUNT_REGISTER_CONFIRM: '/api/account/confirm',
-               ACCOUNT_CHECK_EMAIL_UNIQUE: '/api/account/uniqueemail',
-               OAUTH_VALIDATE_LOGIN: '/api/oauth/login'
+               OAUTH_REGISTER_CREATE: '/api/oauth/create',
+               OAUTH_REGISTER_CONFIRM: '/api/oauth/confirm',
+               OAUTH_CHECK_EMAIL_UNIQUE: '/api/oauth/uniqueemail',
+               OAUTH_VALIDATE_LOGIN: '/api/oauth/login',
+               ACCOUNT_SETTINGS_PROFILE: '/api/account/'
            })
            .run(function ($rootScope, $location, APP_CONFIG) {
 

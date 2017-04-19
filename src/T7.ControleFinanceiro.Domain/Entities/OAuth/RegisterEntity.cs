@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace T7.ControleFinanceiro.Domain.Entities.Account
+namespace T7.ControleFinanceiro.Domain.Entities.OAuth
 {
     public class RegisterEntity
     {

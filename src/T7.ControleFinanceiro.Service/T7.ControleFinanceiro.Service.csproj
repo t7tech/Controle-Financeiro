@@ -76,7 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\ClaimService.cs" />
-    <Compile Include="Account\RegisterService.cs" />
+    <Compile Include="Account\Settings\ProfileService.cs" />
+    <Compile Include="OAuth\RegisterService.cs" />
     <Compile Include="Account\RoleService.cs" />
     <Compile Include="Account\UserClaimsService.cs" />
     <Compile Include="Account\UserService.cs" />

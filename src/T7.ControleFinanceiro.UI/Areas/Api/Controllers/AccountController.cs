@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
-using T7.ControleFinanceiro.Domain.Entities.Account;
-using T7.ControleFinanceiro.Domain.Interface.Service.Account;
+using T7.ControleFinanceiro.Domain.Entities.OAuth;
+using T7.ControleFinanceiro.Domain.Interface.Service.OAuth;
 
 namespace T7.ControleFinanceiro.UI.Areas.Api.Controllers
 {

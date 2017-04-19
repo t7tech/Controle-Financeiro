@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using T7.ControleFinanceiro.Domain.Entities.Account;
+using T7.ControleFinanceiro.Domain.Entities.OAuth;
 
 namespace T7.ControleFinanceiro.UI.Areas.OAuth.Controllers
 {

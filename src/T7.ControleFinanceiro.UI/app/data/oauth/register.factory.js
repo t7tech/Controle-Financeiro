@@ -14,7 +14,7 @@
                // </summary>
                function Create(params) {
                    return $http({
-                       url: URL.ACCOUNT_REGISTER_CREATE,
+                       url: URL.OAUTH_REGISTER_CREATE,
                        headers: { 'Cache-Control': 'no-cache' },
                        method: "POST",
                        data: params
@@ -26,7 +26,7 @@
                // </summary>
                function Confirm(params) {
                    return $http({
-                       url: URL.ACCOUNT_REGISTER_CONFIRM,
+                       url: URL.OAUTH_REGISTER_CONFIRM,
                        headers: { 'Cache-Control': 'no-cache' },
                        method: "POST",
                        data: params

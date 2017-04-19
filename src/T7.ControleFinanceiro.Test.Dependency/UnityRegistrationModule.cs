@@ -4,6 +4,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
 using System.Web;
 using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
+using T7.ControleFinanceiro.Domain.Interface.Repository.OAuth;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 using T7.ControleFinanceiro.Domain.Interface.Service.OAuth;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace T7.ControleFinanceiro.Domain.Entities.Account
+namespace T7.ControleFinanceiro.Domain.Entities.OAuth
 {
     public class ConfirmEmailEntity
     {

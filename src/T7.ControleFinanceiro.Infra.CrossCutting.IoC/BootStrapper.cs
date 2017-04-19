@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using SimpleInjector;
 using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
+using T7.ControleFinanceiro.Domain.Interface.Repository.OAuth;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
 using T7.ControleFinanceiro.Domain.Interface.Service.OAuth;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;

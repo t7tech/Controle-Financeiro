@@ -165,6 +165,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Api\Controllers\OAuthController.cs" />
+    <Compile Include="Areas\Account\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\OAuth\Controllers\TwoFactoryController.cs" />
     <Compile Include="Areas\OAuth\OAuthAreaRegistration.cs" />
     <Compile Include="Areas\OAuth\Controllers\LoginController.cs" />
@@ -187,10 +189,12 @@
   <ItemGroup>
     <Content Include="app\app.config.js" />
     <Content Include="app\app.module.js" />
-    <Content Include="app\components\account\confirm.controller.js" />
-    <Content Include="app\components\account\register.controller.js" />
+    <Content Include="app\components\account\settings\profile.controller.js" />
+    <Content Include="app\components\oauth\confirm.controller.js" />
+    <Content Include="app\components\oauth\register.controller.js" />
     <Content Include="app\components\oauth\login.controller.js" />
-    <Content Include="app\data\account\register.factory.js" />
+    <Content Include="app\data\account\settings\profile.factory.js" />
+    <Content Include="app\data\oauth\register.factory.js" />
     <Content Include="app\data\oauth\login.factory.js" />
     <Content Include="app\shared\directives\compare-to.directive.js" />
     <Content Include="app\shared\directives\user-unique.directive.js" />
@@ -757,6 +761,8 @@
     <Content Include="assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="assets\fonts\FontAwesome.otf" />
     <Content Include="Areas\OAuth\Views\Register\Confirm.cshtml" />
+    <Content Include="Areas\Account\Views\Settings\Index.cshtml" />
+    <Content Include="Areas\Account\Views\Web.config" />
     <None Include="assets\libs\jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="assets\libs\jquery\jquery-1.10.2.js" />
     <Content Include="assets\libs\jquery\jquery-1.10.2.min.js" />
@@ -1594,6 +1600,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\service\" />
+    <Folder Include="Areas\Account\Models\" />
+    <Folder Include="Areas\Account\Views\Shared\" />
     <Folder Include="Areas\Api\Views\Shared\" />
     <Folder Include="Areas\OAuth\Models\" />
     <Folder Include="Areas\OAuth\Views\Shared\" />

@@ -35,8 +35,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Account\ClaimsEntity.cs" />
-    <Compile Include="Entities\Account\ConfirmEmailEntity.cs" />
-    <Compile Include="Entities\Account\RegisterEntity.cs" />
+    <Compile Include="Entities\Account\Settings\UpdateProfileEntity.cs" />
+    <Compile Include="Entities\OAuth\ConfirmEmailEntity.cs" />
+    <Compile Include="Entities\OAuth\RegisterEntity.cs" />
     <Compile Include="Entities\Account\RoleEntity.cs" />
     <Compile Include="Entities\Account\UserClaimsEntity.cs" />
     <Compile Include="Entities\Account\UserEntity.cs" />
@@ -44,12 +45,15 @@
     <Compile Include="Entities\OAuth\LoginEntity.cs" />
     <Compile Include="Entities\OAuth\LoginStatus.cs" />
     <Compile Include="Interface\Repository\Account\IClaimRepository.cs" />
-    <Compile Include="Interface\Repository\Account\IRoleRepository.cs" />
+    <Compile Include="Interface\Repository\Account\ISettingsRepository.cs" />
+    <Compile Include="Interface\Repository\Account\Settings\IProfileRepository.cs" />
+    <Compile Include="Interface\Repository\OAuth\IRoleRepository.cs" />
     <Compile Include="Interface\Repository\Account\IUserClaimsRepository.cs" />
     <Compile Include="Interface\Repository\Account\IUserRolesRepository.cs" />
     <Compile Include="Interface\Repository\Account\IUserRepository.cs" />
     <Compile Include="Interface\Service\Account\IClaimService.cs" />
-    <Compile Include="Interface\Service\Account\IRegisterService.cs" />
+    <Compile Include="Interface\Service\Account\Settings\IProfileService.cs" />
+    <Compile Include="Interface\Service\OAuth\IRegisterService.cs" />
     <Compile Include="Interface\Service\Account\IRoleService.cs" />
     <Compile Include="Interface\Service\Account\IUserClaimsService.cs" />
     <Compile Include="Interface\Service\Account\IUserRolesService.cs" />

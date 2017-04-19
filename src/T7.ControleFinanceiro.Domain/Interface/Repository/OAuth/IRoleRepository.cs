@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using T7.ControleFinanceiro.Domain.Entities.Account;
 
-namespace T7.ControleFinanceiro.Domain.Interface.Repository.Account
+namespace T7.ControleFinanceiro.Domain.Interface.Repository.OAuth
 {
     public interface IRoleRepository : IDisposable
     {

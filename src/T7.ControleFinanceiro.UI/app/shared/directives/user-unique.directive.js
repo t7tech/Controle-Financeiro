@@ -36,13 +36,13 @@
                                         */
                                        $http({
                                            method: 'POST',
-                                           url: URL.ACCOUNT_CHECK_EMAIL_UNIQUE,
+                                           url: URL.OAUTH_CHECK_EMAIL_UNIQUE,
                                            data: {
                                                'Email': newValue
                                            }
                                        })
-                                       .then(function (data, status, headers, cfg) {
-                                           ngModel.$setValidity('unique', data.isUnique);
+                                       .then(function (response, status, headers, cfg) {
+                                           ngModel.$setValidity('unique', response.data.isUnique);
                                        },
                                        function (data, status, headers, cfg) {
                                            throw 'username error';

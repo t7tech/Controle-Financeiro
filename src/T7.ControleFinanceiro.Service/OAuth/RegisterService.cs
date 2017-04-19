@@ -4,12 +4,12 @@ using T7.ControleFinanceiro.Core.Configuration;
 using T7.ControleFinanceiro.Core.Error;
 using T7.ControleFinanceiro.Core.Formatter;
 using T7.ControleFinanceiro.Core.Validation;
-using T7.ControleFinanceiro.Domain.Entities.Account;
-using T7.ControleFinanceiro.Domain.Interface.Service.Account;
+using T7.ControleFinanceiro.Domain.Entities.OAuth;
+using T7.ControleFinanceiro.Domain.Interface.Service.OAuth;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 
-namespace T7.ControleFinanceiro.Service.Account
+namespace T7.ControleFinanceiro.Service.OAuth
 {
     public class RegisterService : IRegisterService
     {
@@ -55,7 +55,7 @@ namespace T7.ControleFinanceiro.Service.Account
             var user = new ApplicationUser
             {
                 UserName = entity.Email,
-                Email = entity.Email,
+                //Email = entity.Email,
                 Name = entity.Name,
                 LastName = entity.LastName,
                 DateBirth = entity.DateBirth
