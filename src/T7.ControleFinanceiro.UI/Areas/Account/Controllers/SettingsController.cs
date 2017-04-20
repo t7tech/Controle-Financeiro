@@ -11,8 +11,6 @@ namespace T7.ControleFinanceiro.UI.Areas.Account.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-
-
             return View();
         }
     }

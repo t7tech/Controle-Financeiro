@@ -39,5 +39,7 @@ namespace T7.ControleFinanceiro.Domain.Entities.Account
         public string LastName { get; set; }
 
         public DateTime DateBirth { get; set; }
+
+        public virtual string EmailOptional { get; set; }
     }
 }

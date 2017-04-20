@@ -30,7 +30,7 @@ namespace T7.ControleFinanceiro.Test.OAuth
             var service = GetService<IUserService>();
             var result = service.GetAll();
 
-            Assert.AreEqual(result.Count(), 0);
+            Assert.AreNotEqual(result.Count(), 0);
         }
     }
 }

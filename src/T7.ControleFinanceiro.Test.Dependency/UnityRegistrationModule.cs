@@ -4,14 +4,18 @@ using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
 using System.Web;
 using T7.ControleFinanceiro.Domain.Interface.Repository.Account;
+using T7.ControleFinanceiro.Domain.Interface.Repository.Account.Settings;
 using T7.ControleFinanceiro.Domain.Interface.Repository.OAuth;
 using T7.ControleFinanceiro.Domain.Interface.Service.Account;
+using T7.ControleFinanceiro.Domain.Interface.Service.Account.Settings;
 using T7.ControleFinanceiro.Domain.Interface.Service.OAuth;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Configuration;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Context;
 using T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model;
 using T7.ControleFinanceiro.Infra.Data.Repository.Account;
+using T7.ControleFinanceiro.Infra.Data.Repository.Account.Settings;
 using T7.ControleFinanceiro.Service.Account;
+using T7.ControleFinanceiro.Service.Account.Settings;
 using T7.ControleFinanceiro.Service.OAuth;
 using T7.ControleFinanceiro.Test.Commom;
 
@@ -43,6 +47,7 @@ namespace T7.ControleFinanceiro.Test.Dependency
             container.RegisterType<IUserClaimsService, UserClaimsService>();
             container.RegisterType<IRegisterService, RegisterService>();
             container.RegisterType<ILoginService, LoginService>();
+            container.RegisterType<IProfileService, ProfileService>();
 
             // register repository
             container.RegisterType<IRoleRepository, RoleRepository>();
@@ -50,6 +55,7 @@ namespace T7.ControleFinanceiro.Test.Dependency
             container.RegisterType<IUserRolesRepository, UserRolesRepository>();
             container.RegisterType<IClaimRepository, ClaimRepository>();
             container.RegisterType<IUserClaimsRepository, UserClaimsRepository>();
+            container.RegisterType<IProfileRepository, ProfileRepository>();
         }
     }
 }

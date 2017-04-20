@@ -14,6 +14,8 @@ namespace T7.ControleFinanceiro.Infra.CrossCutting.Identity.Model
 
         public DateTime DateBirth { get; set; }
 
+        public string EmailOptional { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
