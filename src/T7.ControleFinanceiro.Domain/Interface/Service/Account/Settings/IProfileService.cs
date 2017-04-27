@@ -10,7 +10,7 @@ namespace T7.ControleFinanceiro.Domain.Interface.Service.Account.Settings
 {
     public interface IProfileService
     {
-        UserEntity GetById(string id);
+        UpdateProfileEntity GetById(string id);
         void Update(UpdateProfileEntity entity);
     }
 }

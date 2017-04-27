@@ -1,36 +1,73 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web.Http;
+using T7.ControleFinanceiro.Core.Validation;
 using T7.ControleFinanceiro.Core.Web;
+using T7.ControleFinanceiro.Domain.Entities.Account.Settings;
+using T7.ControleFinanceiro.Domain.Interface.Service.Account.Settings;
 
 namespace T7.ControleFinanceiro.UI.Areas.Api.Controllers
 {
     public class ProfileController : BaseApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        #region Attibutes
+
+        private IProfileService _profileService;
+
+        #endregion
+
+        #region Ctor
+
+        /// <summary>
+        /// Ctor
+        /// </summary>
+        /// <param name="profileService"></param>
+        public ProfileController(IProfileService profileService)
         {
-            return new string[] { "value1", "value2", UserId };
+            _profileService = profileService;
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IHttpActionResult> Update([FromBody] UpdateProfileEntity value)
         {
-            return "value";
+            try
+            {
+                /*
+                 * Validate Input Parameter
+                 */
+                AssertionConcern.AssertArgumentNotNull(value, "Ocorreu um erro ao atualizar seu perfil");
+
+                /*
+                 * Get Logged UserId
+                 */
+                value.Id = UserId;
+
+                /*
+                 * Update Profile
+                 */
+                _profileService.Update(value);
+
+                return Ok();
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError();
+            }
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
+        #endregion
     }
 }

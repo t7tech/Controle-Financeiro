@@ -19,7 +19,7 @@
                OAUTH_REGISTER_CONFIRM: '/api/oauth/confirm',
                OAUTH_CHECK_EMAIL_UNIQUE: '/api/oauth/uniqueemail',
                OAUTH_VALIDATE_LOGIN: '/api/oauth/login',
-               ACCOUNT_SETTINGS_PROFILE: '/api/account/'
+               ACCOUNT_SETTINGS_PROFILE: '/api/profile/update'
            })
            .run(function ($rootScope, $location, APP_CONFIG) {
 
@@ -62,6 +62,16 @@
                        angular.element('#modal-alert .modal-body').html(defaultMessage);
                    }
 
+                   angular.element('#modal-alert').modal('show');
+
+               };
+
+               /*
+                * Show message success
+                */
+               $rootScope.OnSuccess = function (defaultMessage) {
+
+                   angular.element('#modal-alert .modal-body').html(defaultMessage);
                    angular.element('#modal-alert').modal('show');
 
                };

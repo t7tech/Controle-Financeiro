@@ -1,7 +1,59 @@
-﻿@{
+﻿@model T7.ControleFinanceiro.Domain.Entities.Account.Settings.UpdateProfileEntity
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section scripts{
-
+    @Html.AngularJSModel(Model)
+    <script src="~/app/data/account/settings/profile.factory.js"></script>
+    <script src="~/app/components/account/settings/profile.controller.js"></script>
 }
+
+<div ng-controller="AccountSettingsProfileController">
+    <form id="formUpdateProfile" name="formUpdateProfile" method="post" ng-submit="OnSubmit($event)" role="form" novalidate>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+            <input type="text" id="txtName" name="txtName" class="form-control" placeholder="Nome" aria-describedby="basic-addon1" ng-minlength="3" ng-maxlength="50" maxlength="50" placeholder="Nome" ng-model="Model.Name" required />
+        </div>
+        <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formUpdateProfile.txtName.$dirty && formUpdateProfile.txtName.$invalid">
+            <small class="error" ng-bind="GetMessageNameValidation()"></small>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+            <input type="text" id="txtLastName" name="txtLastName" class="form-control" placeholder="Sobrenome" aria-describedby="basic-addon1" ng-minlength="3" ng-maxlength="50" maxlength="50" placeholder="Sobrenome" ng-model="Model.LastName" required />
+        </div>
+        <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formUpdateProfile.txtLastName.$dirty && formUpdateProfile.txtLastName.$invalid">
+            <small class="error" ng-bind="GetMessageLastNameValidation()"></small>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon2">
+                <i class="fa fa-at" aria-hidden="true"></i>
+            </span>
+            <input type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="E-mail" ng-trim="false" aria-describedby="basic-addon2" ng-minlength="5" ng-maxlength="50" maxlength="50" ng-model="Model.Email" ng-pattern="Regex.Email" required />
+        </div>
+        <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formUpdateProfile.txtEmail.$dirty && formUpdateProfile.txtEmail.$invalid">
+            <small class="error" ng-bind="GetMessageEmailValidation()"></small>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon2">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+            </span>
+            <input type="text" id="txtDateBirth" name="txtDateBirth" class="form-control" placeholder="Data de Nascimento" ng-trim="false" ng-pattern="Regex.DateBirth" ng-model="Model.DateBirth | date:'dd/MM/yyyy'" aria-describedby="basic-addon2" required>
+        </div>
+        <div class="input-group list-group-item list-group-item-danger message-error" ng-show="formUpdateProfile.txtDateBirth.$dirty && formUpdateProfile.txtDateBirth.$invalid">
+            <small class="error" ng-bind="GetMessageDateBirthValidation()">Este campo é obrigatório</small>
+        </div>
+
+        <div class="text-center">
+            <input type="submit" class="btn btn-success btn-submit" value="Atualizar" ng-disabled="formUpdateProfile.$invalid">
+        </div>
+    </form>
+</div>

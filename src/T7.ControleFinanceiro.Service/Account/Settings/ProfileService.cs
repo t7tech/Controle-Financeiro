@@ -32,7 +32,7 @@ namespace T7.ControleFinanceiro.Service.Account.Settings
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public UserEntity GetById(string id)
+        public UpdateProfileEntity GetById(string id)
         {
             /*
              * Validation
@@ -46,7 +46,13 @@ namespace T7.ControleFinanceiro.Service.Account.Settings
             if (result == null)
                 throw new Exception("Usuário não encontrado");
 
-            return result;
+            return new UpdateProfileEntity
+            {
+                Name = result.Name,
+                LastName = result.LastName,
+                Email = result.EmailOptional,
+                DateBirth = result.DateBirth
+            };
         }
 
         /// <summary>
@@ -59,7 +65,6 @@ namespace T7.ControleFinanceiro.Service.Account.Settings
              * Validation
              */
             AssertionConcern.AssertArgumentNotNull(entity, "As informações inseridas são inválidas");
-            //AssertionConcern.AssertArgumentNotEmpty(entity.Email, "Informe seu e-mail");
             AssertionConcern.AssertArgumentNotEmpty(entity.Name, "Informe seu nome");
             AssertionConcern.AssertArgumentNotEmpty(entity.LastName, "Informe seu sobrenome");
             AssertionConcern.AssertArgumentNotNull(entity.DateBirth, "Informe sua data de nascimento");
